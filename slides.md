@@ -1,31 +1,24 @@
 ---
-# You can also start simply with 'default'
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
+theme: ./slidev-theme-amarula
 background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply unocss classes to the current slide
-class: text-center
-# https://sli.dev/features/drawing
+title: "Feasibility and Architecture of a Dual-Board Embedded System: Yocto & Zephyr Integration"
+author: Andrea Ricchi & Dario Binacchi
+event: ELCE 2025
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# open graph
-# seoMeta:
-#  ogImage: https://cover.sli.dev
 ---
 
-# Welcome to Slidev
+<!-- The content of the slide is handled by the layout -->
+
+---
+
+::title::
+
+Welcome to Slidev
+
+::body::
 
 Presentation slides for developers
 
@@ -50,7 +43,11 @@ The last comment block of each slide will be treated as slide notes. It will be 
 transition: fade-out
 ---
 
-# What is Slidev?
+::title::
+
+What is Slidev?
+
+::body::
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 
@@ -92,7 +89,11 @@ transition: slide-up
 level: 2
 ---
 
+::title::
+
 # Navigation
+
+::body::
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
 
@@ -190,7 +191,11 @@ Notes can also sync with clicks
 level: 2
 ---
 
-# Shiki Magic Move
+::title::
+
+Shiki Magic Move
+
+::body::
 
 Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
 
@@ -262,7 +267,11 @@ const author = {
 
 ---
 
-# Components
+::title::
+
+Components
+
+::body::
 
 <div grid="~ cols-2 gap-4">
 <div>
@@ -306,7 +315,11 @@ Also, HTML elements are valid:
 class: px-20
 ---
 
-# Themes
+::title::
+
+Themes
+
+::body::
 
 Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
@@ -335,7 +348,11 @@ check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
 
 ---
 
-# Clicks Animations
+::title::
+
+Clicks Animations
+
+::body::
 
 You can add `v-click` to elements to add a click animation.
 
@@ -372,7 +389,11 @@ also allows you to add
 
 ---
 
-# Motions
+::title::
+
+Motions
+
+::body::
 
 Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
 
@@ -452,7 +473,11 @@ const final = {
 
 ---
 
-# LaTeX
+::title::
+
+LaTeX
+
+::body::
 
 LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
 
@@ -474,7 +499,11 @@ $$
 
 ---
 
-# Diagrams
+::title::
+
+Diagrams
+
+::body::
 
 You can create diagrams / graphs from textual descriptions, directly in your Markdown.
 
@@ -556,7 +585,11 @@ dragPos:
   square: 691,32,167,_,-16
 ---
 
-# Draggable Elements
+::title::
+
+Draggable Elements
+
+::body::
 
 Double-click on the draggable elements to edit their positions.
 
@@ -579,7 +612,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="614,234,261,_,-15">
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
@@ -602,7 +635,11 @@ hide: false
 
 ---
 
-# Monaco Editor
+::title::
+
+Monaco Editor
+
+::body::
 
 Slidev provides built-in Monaco Editor support.
 
@@ -631,7 +668,7 @@ layout: center
 class: text-center
 ---
 
-# Learn More
+Learn More
 
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
 
