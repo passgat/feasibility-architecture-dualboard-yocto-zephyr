@@ -16,27 +16,45 @@ mdc: true
 
 ::title::
 
-Welcome to Slidev
+About Us
 
 ::body::
 
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
+<div class="flex flex-row justify-around">
+   <div class="flex flex-col justify-center items-center">
+      <div class="text-3xl font-semibold">
+         Andrea Ricchi
+      </div>
+      <a href="mailto:andrea.ricchi@amarulasolutions.com" class="text-xl text-blue-500 underline">andrea.ricchi@amarulasolutions.com</a>
+      <a href="https://github.com/AndreaRicchi" class="text-xl text-blue-500 underline">
+      https://github.com/AndreaRicchi
+      </a>
+      <hr class="my-4">
+      </hr>
+      <ul class="text-l">
+         <li>C</li>
+         <li>Rust</li>
+         <li>C++ & Qt</li>
+         <li>Dart & Flutter</li>
+         <li>Yocto & Buildroot</li>
+      </ul>
+   </div>
+   <div class="flex flex-col justify-between space-y-2">
+      <div>
+         <img src="./assets/andrea_avatar.jpg" alt="Ricchi-avatar" class="w-54 h-54 rounded-xl shadow" />
+      </div>
+      <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45313.59690505175!2d10.876755850000011!3d44.77877055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f8d2da31002a3%3A0xe3b13d5ff519c63f!2s41012%20Carpi%20MO!5e0!3m2!1sit!2sit!4v1750767724786!5m2!1sit!2sit"
+         class="w-54 h-54 rounded-xl shadow"
+         loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"
+         >
+      </iframe>
+   </div>
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+A quick introduction about myself: I’m Andrea Ricchi, from Carpi, Italy. At Amarula Solutions, I work as an embedded developer. My focus is on GUI applications using C++/Qt or Dart/Flutter, as well as user-space applications and services written in C/C++ and Rust. I actively contribute to open-source software projects, collaborating with the community on real-world challenges, including work on ConnMan, libraries, and UI components. I also have experience with Yocto and Buildroot, contributing recipes and packages to support embedded Linux development.
 -->
 
 ---
