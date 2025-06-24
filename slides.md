@@ -121,6 +121,63 @@ I live in a small town in the Po valley, north of Italy.
 -->
 
 ---
+
+::title::
+
+About Us
+
+::body::
+
+<div class="flex flex-row justify-around">
+   <div class="flex flex-col justify-center items-center">
+      <div class="text-3xl font-semibold">
+         Amarula Solutions
+      </div>
+      <a href="mailto:info@amarulasolutions.com" class="text-xl text-blue-500 underline">info@amarulasolutions.com</a>
+      <a href="www.amarulasolutions.com" class="text-xl text-blue-500 underline">
+      www.amarulasolutions.com
+      </a>
+      <hr class="my-4">
+      </hr>
+      <ul class="text-l">
+         <li>
+            Software Consulting Across Europe
+            <ul>
+               <li>Offices in multiple European countries</li>
+               <li>Focused on mobile apps, cloud platforms, and embedded systems</li>
+            </ul>
+         </li>
+         <li>
+            Full-Stack Embedded Expertise
+            <ul>
+               <li>From bootloaders & kernels to UI applications</li>
+               <li>Deep knowledge of Android & Linux OS</li>
+            </ul>
+         </li>
+         <li>
+            Open Source at Our Core
+            <ul>
+               <li>Active upstream contributions</li>
+               <li>Solutions built for security and long-term maintainability</li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   <div class="flex flex-col justify-center">
+      <div>
+         <img src="./slidev-theme-amarula/assets/logo-small-dark.svg" class="block dark:hidden w-54 h-54 rounded-xl shadow p-2" alt="Dark logo" />
+         <img src="./slidev-theme-amarula/assets/logo-small-white.svg" class="hidden dark:block w-54 h-54 rounded-xl shadow p-2" alt="White logo" />
+      </div>
+   </div>
+</div>
+
+<!--
+We work at Amarula Solutions, a software consulting company with multiple offices across Europe. Our expertise spans mobile applications, cloud platforms, and embedded systems based on Android and Linux OS. We operate in a highly vertical organisation, covering everything from bootloaders and kernels all the way up to user interface applications.
+
+A core principle that guides our work is our open-source-oriented mindset. We actively contribute upstream, prioritising both security and long-term maintainability in the solutions we build.
+-->
+
+---
 transition: fade-out
 ---
 
