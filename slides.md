@@ -176,3 +176,14 @@ We work at Amarula Solutions, a software consulting company with multiple office
 
 A core principle that guides our work is our open-source-oriented mindset. We actively contribute upstream, prioritising both security and long-term maintainability in the solutions we build.
 -->
+
+---
+
+::title::
+
+Agenda
+
+::body::
+
+<!--
+-->
