@@ -58,6 +58,69 @@ A quick introduction about myself: I’m Andrea Ricchi, from Carpi, Italy. At Am
 -->
 
 ---
+
+::title::
+
+About Us
+
+::body::
+
+<div class="flex flex-row justify-around">
+   <div class="flex flex-col justify-center items-center">
+      <div class="text-3xl font-semibold">
+         Dario Binacchi
+      </div>
+      <a href="mailto:dario.binacchi@amarulasolutions.com" class="text-xl text-blue-500 underline">dario.binacchi@amarulasolutions.com</a>
+      <a href="https://github.com/passgat" class="text-xl text-blue-500 underline">
+      https://github.com/passgat
+      </a>
+      <hr class="my-4">
+      </hr>
+      <ul class="text-l">
+         <li>Embedded Linux Engineer at Amarula Solutions</li>
+         <li>
+            Open Source contributor
+            <ul>
+               <li>Buildroot</li>
+               <li>Yocto</li>
+               <li>
+                  Linux
+                  <ul>
+                     <li>Maintainer for bxCAN and slCAN driver</li>
+                  </ul>
+               </li>
+               <li>
+                  U-Boot
+                  <ul>
+                     <li>Custodian for NAND sub-system with Michael Trimarchi</li>
+                  </ul>
+               </li>
+               <li>Zephyr</li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+   <div class="flex flex-col justify-between space-y-2">
+      <div>
+         <img src="" alt="Binacchi-avatar" class="w-54 h-54 rounded-xl shadow" />
+      </div>
+      <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.7545496510397!2d10.669070376736789!3d44.96898086634357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47802f14b2f0bbd7%3A0xfe1866464beb4f0b!2sLido%20Po%20Luzzara!5e0!3m2!1sen!2sit!4v1750770011439!5m2!1sen!2sit"
+         class="w-54 h-54 rounded-xl shadow"
+         loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"
+         >
+      </iframe>
+   </div>
+</div>
+
+<!--
+I’m Dario Binacchi and at Amarula, I mainly take care of the operating system side of the boards we work on.
+I’m an open source contributor for projects like Buildroot, U-boot, Linux and Zephyr. Together with my colleague Michael Trimarchi, I am a custodian of the NAND subsystem in U-Boot, and in the Linux kernel, I maintain the BxCAN and SLCAN drivers for the CAN subsystem.
+I live in a small town in the Po valley, north of Italy.
+-->
+
+---
 transition: fade-out
 ---
 
