@@ -8,6 +8,10 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+fonts:
+  sans: Roboto
+  serif: Roboto Slab
+  mono: Fira Code
 ---
 
 <!-- The content of the slide is handled by the layout -->
