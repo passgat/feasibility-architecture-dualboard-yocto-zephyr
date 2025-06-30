@@ -190,7 +190,7 @@ Agenda
 
  <v-switch>
    <template #0>
-      <div class="flex flex-row justify-around  text-4xl"> Hardware Setup   </div>
+      <div class="flex flex-row justify-around text-4xl"> Hardware Setup </div>
    </template>
    <template #1>
       <div class="flex flex-row justify-around">
@@ -266,4 +266,53 @@ Agenda
 
 <!--
 In this presentation will detail the journey of our idea, from its initial concept to its development, including the challenges encountered. We will also provide an overview and comparison of the core components: the hardware setup (boards and sensors), the operating systems (Linux Yocto vs. Zephyr), and the UI frameworks (Flutter vs. LVGL).
+-->
+
+---
+preload: false
+---
+
+::title::
+
+Why
+
+::body::
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const icons = [
+  './assets/flutter_logo.svg',
+  './assets/lvgl_logo.svg',
+  './assets/yocto_logo.svg',
+  './assets/zephyr_logo.svg',
+]
+
+const rotation = ref(0)
+
+onMounted(() => {
+  const animate = () => {
+    rotation.value = (rotation.value + 0.2) % 360
+    requestAnimationFrame(animate)
+  }
+  animate()
+})
+</script>
+
+<div class="h-screen pr-32">
+  <div class="relative  w-64 h-64 mx-auto">
+    <template v-for="(icon, i) in icons">
+      <div
+        class="absolute top-1/2 left-1/2"
+        :style="{
+          transform: `rotate(${rotation}deg) rotate(${(360 / icons.length) * i}deg) translate(0, -150px) rotate(-${rotation + (360 / icons.length) * i}deg)`
+        }"
+      >
+        <img :src="icon" class="w-54 h-54" />
+      </div>
+    </template>
+  </div>
+</div>
+
+<!--
 -->
