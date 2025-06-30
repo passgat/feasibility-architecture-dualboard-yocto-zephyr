@@ -316,3 +316,14 @@ onMounted(() => {
 
 <!--
 -->
+
+---
+
+::title::
+
+Hardware Setup
+
+::body::
+
+<!--
+-->
