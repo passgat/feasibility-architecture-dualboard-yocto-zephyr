@@ -587,3 +587,147 @@ KAS is a tool that simplifies working with the Yocto Project by managing configu
 
 With the power of Yocto and the simplicity of KAS, our result is this YAML file that contains all the building blocks that we analysed earlier.
 -->
+
+---
+
+::title::
+
+Our KAS config
+
+::body::
+
+## .config.yaml
+
+<div class="h-2" />
+
+````md magic-move
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+machine: stm32mp25-icore
+distro: openstlinux-weston
+target: st-image-weston
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+repos:
+    bitbake:
+        url: "https://git.openembedded.org/bitbake"
+        branch: "2.10"
+        layers:
+            .: excluded
+
+    openembedded-core:
+        url: "https://git.openembedded.org/openembedded-core"
+        commit: 236ac1b43308df722a78d3aa20aef065dfae5b2b
+        layers:
+            meta:
+
+    meta-openembedded:
+        url: "https://github.com/openembedded/meta-openembedded"
+        commit: 1235dd4ed4a57e67683c045ad76b6a0f9e896b45
+        layers:
+            meta-gnome:
+            meta-multimedia:
+            meta-networking:
+            meta-oe:
+            meta-python:
+            meta-webserver:
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+    meta-st-openstlinux:
+        url: "https://github.com/STMicroelectronics/meta-st-openstlinux"
+        commit: a25d4806880cdc73471e3c1824a87901b5a4e44f
+
+    meta-st-stm32mp:
+        url: "https://github.com/STMicroelectronics/meta-st-stm32mp"
+        commit: dd13b8318b78f956086efade81de9c72c0e97187
+
+    meta-st-stm32mp-addons:
+        url: "https://github.com/STMicroelectronics/meta-st-stm32mp-addons"
+        commit: 97617f888513d89c4070f59bfdfa2a91e8175d5c
+
+    meta-st-scripts:
+        url: "https://github.com/STMicroelectronics/meta-st-scripts"
+        commit: 27b8b0df3b2f3515d5e51de65f54eff00ddacb82
+        layers:
+            .: excluded
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+    meta-engicam-st:
+        url: "https://github.com/amarula/meta-engicam-st"
+        branch: "scarthgap"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+    meta-clang:
+        url: "https://github.com/kraj/meta-clang"
+        branch: "scarthgap"
+
+    meta-flutter:
+        url: "https://github.com/meta-flutter/meta-flutter"
+        branch: "scarthgap"
+        layers:
+            .:
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+    meta-amarula-demo:
+        url: "https://github.com/amarula/meta-amarula-demo.git"
+        commit: 611f500415bd9f141b8b4bc6782c8b596f9b56ad
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
+[...]
+local_conf_header:
+    standard: |
+        BB_NUMBER_THREADS ?= "12"
+        PARALLEL_MAKE ?= "-j 6"
+        EULA_FILE_ST = "1"
+        ACCEPT_EULA_stm32mp25-icore = "1"
+        GLIBC_GENERATE_LOCALES = "en_GB.UTF-8 en_US.UTF-8"
+        IMAGE_LINGUAS ?= "en-gb"
+        INHERIT += "devshell"
+        RM_OLD_IMAGE = "1"
+        PACKAGE_CLASSES = "package_deb"
+        REPRODUCIBLE_TIMESTAMP_ROOTFS = ""
+        SDK_EXT_TYPE="minimal"
+        SDK_INCLUDE_TOOLCHAIN="1"
+        PRSERV_HOST = "localhost:0"
+        HOSTTOOLS += "xz truncate"
+        IMAGE_INSTALL:append = " \
+            flutter-engine \
+            flutter-wayland-client \
+            ew-2025-flutter-demo-can-lib \
+            ew-2025-flutter-demo \
+            connman \
+            connman-client \
+        "
+        TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
+[...]
+```
+
+````
+
+<!--
+-->
