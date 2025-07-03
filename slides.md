@@ -555,3 +555,35 @@ ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
 <!--
 To ensure a smooth and consistent build process, we customised our Yocto local.conf. We optimised build performance with parallelism settings (BB_NUMBER_THREADS and PARALLEL_MAKE), and enabled STMicroelectronics-specific licensing by accepting the EULA required for STM32MP25-based platforms. For localisation, we specified UTF-8 locales and language support. We chose the Debian package format (package_deb) for improved integration with Flutter and system updates, and enabled reproducible builds by controlling root file system timestamps. The configuration also supports extensible SDK generation and sets up the PR server to prevent version rollback issues in packaged recipes. Finally, we extended the image with key components for our Flutter-based UI, including the Flutter engine, Wayland client, and our custom application demos, ensuring that everything needed for development and deployment is included out of the box.
 -->
+
+---
+
+::title::
+
+Meet KAS
+
+::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      This tool provides an easy mechanism to setup bitbake based projects.
+   </div>
+   <v-clicks class="text-xl">
+      <ul class="list-disc list-inside space-y-3 max-w-xs">
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Clone and checkout bitbake layers</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Create default bitbake settings (machine, arch, …)</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Launch minimal build environment, reducing risk of host contamination</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Initiate bitbake build process</li>
+      </ul>
+   </v-clicks>
+</div>
+
+<!--
+As you have seen until now, managing Yocto can be tricky. Layers, configs, dependencies…
+
+KAS make it too easy, almost boring…
+
+KAS is a tool that simplifies working with the Yocto Project by managing configurations and build environments through a single YAML file. Instead of manually setting up multiple layers, repositories, and local configurations, KAS lets you define everything in a structured, version-controlled format, making your builds reproducible and team-friendly. With just one command, kas build, you can go from a clean environment to a fully built Linux image. It's especially useful in collaborative or CI/CD setups, where consistency and ease of setup are crucial. Think of it as a lightweight project manager that keeps your Yocto-based workflows clean, reliable, and repeatable.
+
+With the power of Yocto and the simplicity of KAS, our result is this YAML file that contains all the building blocks that we analysed earlier.
+-->
