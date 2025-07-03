@@ -731,3 +731,49 @@ local_conf_header:
 
 <!--
 -->
+
+---
+
+<style scoped>
+.slidev-code {
+   font-size: 24px !important;
+   line-height: 32px !important;
+}
+</style>
+
+::title::
+
+KAS Usage
+
+::body::
+
+<v-switch>
+
+  <!-- Step 0 -->
+  <template #0>
+
+  ## Run KAS on host
+  <br></br>
+  ```bash
+  $ kas checkout
+  $ kas build
+  ```
+
+  </template>
+
+  <!-- Step 1 -->
+  <template #1>
+
+  ## Run KAS inside a build container
+  <br></br>
+  ```bash
+  $ kas-container checkout
+  $ kas-container build
+  ```
+
+  </template>
+
+</v-switch>
+
+<!--
+-->
