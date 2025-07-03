@@ -353,3 +353,62 @@ The Yocto Project
 
 <!--
 -->
+
+---
+
+::title::
+
+Our Setup
+
+::body::
+
+## Yocto folder structure
+
+<br>
+
+````md magic-move
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
+bitbake
+openembedded-core
+meta-openembedded
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
+[...]
+meta-st-openstlinux
+meta-st-scripts
+meta-st-stm32mp
+meta-st-stm32mp-addons
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
+[...]
+meta-engicam-st
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
+[...]
+meta-clang
+meta-flutter
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
+[...]
+meta-amarula-demo
+[...]
+```
+
+````
+
+<!--
+-->
