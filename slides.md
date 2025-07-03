@@ -14,6 +14,13 @@ fonts:
   mono: Fira Code
 ---
 
+<style>
+.slidev-code {
+   font-size: 10px !important;
+   line-height: 15px !important;
+}
+</style>
+
 <!-- The content of the slide is handled by the layout -->
 
 ---
@@ -596,10 +603,6 @@ Our KAS config
 
 ::body::
 
-## .config.yaml
-
-<div class="h-2" />
-
 ````md magic-move
 
 ```bash
@@ -737,7 +740,7 @@ local_conf_header:
 <style scoped>
 .slidev-code {
    font-size: 24px !important;
-   line-height: 32px !important;
+   line-height: 36px !important;
 }
 </style>
 
