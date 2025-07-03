@@ -470,3 +470,88 @@ The challanges
 <!--
 In our project, we initially faced a version incompatibility between the official meta-engicam-st layer and the meta-flutter layer. The meta-engicam-st was based on an older Yocto release, which made it incompatible with the dependencies required by meta-flutter. To resolve this, we updated the meta-engicam-st layer to align with the latest Yocto LTS release, Scarthgap. This allowed us to successfully build both the board support package and the Flutter engine using the most recent and stable Yocto version, ensuring long-term maintainability and access to the latest features and security updates.
 -->
+
+---
+
+::title::
+
+Our configuration
+
+::body::
+
+## local.conf
+
+<br>
+
+````md magic-move
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   BB_NUMBER_THREADS ?= "12"
+   PARALLEL_MAKE ?= "-j 6"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   MACHINE ??= "stm32mp25-icore"
+   DISTRO ??= "openstlinux-weston"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   EULA_FILE_ST = "1"
+   ACCEPT_EULA_stm32mp25-icore = "1"
+   GLIBC_GENERATE_LOCALES = "en_GB.UTF-8 en_US.UTF-8"
+   IMAGE_LINGUAS ?= "en-gb"
+   INHERIT += "devshell"
+   RM_OLD_IMAGE = "1"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   PACKAGE_CLASSES = "package_deb"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   SDK_EXT_TYPE = "minimal"
+   SDK_INCLUDE_TOOLCHAIN = "1"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   PRSERV_HOST = "localhost:0"
+[...]
+```
+
+```bash
+ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
+[...]
+   IMAGE_INSTALL:append = " \
+      flutter-engine \
+      flutter-wayland-client \
+      ew-2025-flutter-demo-can-lib \
+      ew-2025-flutter-demo \
+      connman \
+      connman-client \
+   "
+   TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
+[...]
+```
+
+````
+
+<!--
+To ensure a smooth and consistent build process, we customised our Yocto local.conf. We optimised build performance with parallelism settings (BB_NUMBER_THREADS and PARALLEL_MAKE), and enabled STMicroelectronics-specific licensing by accepting the EULA required for STM32MP25-based platforms. For localisation, we specified UTF-8 locales and language support. We chose the Debian package format (package_deb) for improved integration with Flutter and system updates, and enabled reproducible builds by controlling root file system timestamps. The configuration also supports extensible SDK generation and sets up the PR server to prevent version rollback issues in packaged recipes. Finally, we extended the image with key components for our Flutter-based UI, including the Flutter engine, Wayland client, and our custom application demos, ensuring that everything needed for development and deployment is included out of the box.
+-->
