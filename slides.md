@@ -412,3 +412,61 @@ meta-amarula-demo
 
 <!--
 -->
+
+---
+
+::title::
+
+The challanges
+
+::body::
+
+<v-switch>
+
+  <!-- Step 0 -->
+  <template #0>
+
+  ## meta-flutter
+  <br></br>
+  `* bf37f37 - (HEAD -> scarthgap, origin/scarthgap) Rename CI (2 weeks ago) <Joel Winarske>`
+
+  </template>
+
+  <!-- Step 1 -->
+  <template #1>
+
+  ## meta-flutter
+  <br></br>
+  `* bf37f37 - (HEAD -> scarthgap, origin/scarthgap) Rename CI (2 weeks ago) <Joel Winarske>`
+
+  <br></br>
+  <br></br>
+
+  ## meta-engicam-st (engicam-stable)
+  <br></br>
+  `* 3143970 - (HEAD -> mickledore-6.1_v24.06, origin/mickledore-6.1_v24.06) stm32mp2 MicroGEA: added support for spi1 (2 weeks ago)`
+
+  </template>
+
+  <!-- Step 2 -->
+  <template #2>
+
+  ## meta-flutter
+  <br></br>
+  `* bf37f37 - (HEAD -> scarthgap, origin/scarthgap) Rename CI (2 weeks ago) <Joel Winarske>`
+
+  <br></br>
+  <br></br>
+
+  ## meta-engicam-st (amarula)
+  <br></br>
+  `* d3ff59d - (HEAD -> scarthgap, origin/scarthgap) Update conf machine configuration to use newest components (2 weeks ago) <Michael Trimarchi>`
+
+  </template>
+
+</v-switch>
+
+
+<!--
+In our project, we initially faced a version incompatibility between the official meta-engicam-st layer and the meta-flutter layer. The meta-engicam-st was based on an older Yocto release, which made it incompatible with the dependencies required by meta-flutter. To resolve this, we updated the meta-engicam-st layer to align with the latest Yocto LTS release, Scarthgap. This allowed us to successfully build both the board support package and the Flutter engine using the most recent and stable Yocto version, ensuring long-term maintainability and access to the latest features and security updates.
+-->
