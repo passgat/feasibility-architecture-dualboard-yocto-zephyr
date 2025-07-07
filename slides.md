@@ -936,3 +936,42 @@ For those who don’t know Flutter is a UI framework developed by Google and wri
 
 Now, you might be thinking, 'Flutter? That's for mobile apps.' I’ve heard people say it’s not truly supported on embedded Linux. Today, we're going to bust that myth. Not only is it supported, but it's already shipping in real products from major brands like Toyota.
 -->
+
+---
+
+::title::
+
+The Power of Flutter
+
+::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      This framework's developer experience and power are top-notch.
+   </div>
+   <v-clicks class="text-xl">
+      <ul class="list-disc list-inside space-y-3 max-w-xs">
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Easy to learn and use
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Hot Reload
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Null safety and async/await support
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Natively compiled for great performance
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Cross-platform with consistent UI
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Excellent tooling for development and debugging
+         </li>
+      </ul>
+   </v-clicks>
+</div>
+
+<!--
+-->
