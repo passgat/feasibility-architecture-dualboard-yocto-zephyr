@@ -780,3 +780,105 @@ KAS Usage
 
 <!--
 -->
+
+---
+
+::title::
+
+The UI
+
+::body::
+
+<v-switch>
+  <template #0>
+    <body class="flex flex-col h-full text-center">
+      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
+        <div class="w-1/2">Sensor Board</div>
+        <div class="w-1/2">Master Board</div>
+      </div>
+    </body>
+  </template>
+
+  <template #1>
+    <body class="flex flex-col h-full text-center">
+      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
+        <div class="w-1/2">Sensor Board</div>
+        <div class="w-1/2">Master Board</div>
+      </div>
+      <div class="flex-1 flex flex-col justify-between py-4">
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
+            <div class="w-1/2">Cortex‑M4 MCU</div>
+            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </template>
+
+  <template #2>
+    <body class="flex flex-col h-full text-center">
+      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
+        <div class="w-1/2">Sensor Board</div>
+        <div class="w-1/2">Master Board</div>
+      </div>
+      <div class="flex-1 flex flex-col justify-between py-4">
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
+            <div class="w-1/2">Cortex‑M4 MCU</div>
+            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
+          </div>
+        </div>
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
+            <div class="w-1/2">Zephyr</div>
+            <div class="w-1/2">Yocto</div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </template>
+
+  <template #3>
+    <body class="flex flex-col h-full text-center">
+      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
+        <div class="w-1/2">Sensor Board</div>
+        <div class="w-1/2">Master Board</div>
+      </div>
+      <div class="flex-1 flex flex-col justify-between py-4">
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
+            <div class="w-1/2">Cortex‑M4 MCU</div>
+            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
+          </div>
+        </div>
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
+            <div class="w-1/2">Zephyr</div>
+            <div class="w-1/2">Yocto</div>
+          </div>
+        </div>
+        <div>
+          <div class="w-full border-t border-gray-300 mb-2"></div>
+          <div class="flex flex-row justify-evenly w-full text-2xl font-medium leading-relaxed">
+            <div class="w-1/2">LVGL</div>
+            <div class="w-1/2">Flutter</div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </template>
+</v-switch>
+
+<!--
+Since both boards have displays, we wanted to implement UI applications to showcase not only the hardware capabilities but also our experience in embedded UI development.
+
+For the sensor board, the choice was straightforward. Given the limited processing power and the use of Zephyr, we chose LVGL—the most popular free and open-source graphics library for embedded systems. It’s lightweight, efficient, and well-suited for MCUs.
+
+On the master board, running Linux, we had a wide range of UI frameworks to choose from. In the past, I’ve mainly worked with Qt, but due to the licensing changes in Qt6, we decided to explore an open-source alternative. We chose Flutter, a framework well known in the mobile world, and now gaining traction in the embedded Linux community.
+-->
