@@ -882,3 +882,14 @@ For the sensor board, the choice was straightforward. Given the limited processi
 
 On the master board, running Linux, we had a wide range of UI frameworks to choose from. In the past, I’ve mainly worked with Qt, but due to the licensing changes in Qt6, we decided to explore an open-source alternative. We chose Flutter, a framework well known in the mobile world, and now gaining traction in the embedded Linux community.
 -->
+
+---
+
+::title::
+
+LVGL
+
+::body::
+
+<!--
+-->
