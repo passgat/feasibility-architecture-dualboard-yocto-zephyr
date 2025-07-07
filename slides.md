@@ -893,3 +893,46 @@ LVGL
 
 <!--
 -->
+
+---
+
+::title::
+
+Meet Flutter
+
+::body::
+
+<div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed p-8">
+   <div class="flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-64">
+         <img src="./assets/flutter_logo.svg" class="w-54 h-54 object-contain mx-auto" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Made by Google</div>
+      </div>
+   </div>
+   <div class="grid grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_mobile.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Mobile</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_web.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Web</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_desktop.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Desktop</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_embedded.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Embedded</div>
+      </div>
+   </div>
+</div>
+
+<!--
+We just seen how LVGL was really suited for our needs and the potential that it offers on MCUs. But what about MPUs?
+
+For those who don’t know Flutter is a UI framework developed by Google and written in the Dart language. It’s extremely popular in the mobile app world.
+
+Now, you might be thinking, 'Flutter? That's for mobile apps.' I’ve heard people say it’s not truly supported on embedded Linux. Today, we're going to bust that myth. Not only is it supported, but it's already shipping in real products from major brands like Toyota.
+-->
