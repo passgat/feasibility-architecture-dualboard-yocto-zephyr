@@ -1027,3 +1027,51 @@ The Flutter Ecosystem
 
 <!--
 -->
+
+---
+
+::title::
+
+Flutter and C++
+
+::body::
+
+<v-switch>
+   <template #0>
+      <div class="flex flex-row items-center justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Flutter apps can use the FFI library to call native C APIs, and to read, write, allocate, and deallocate native memory.
+         </div>
+      </div>
+   </template>
+   <template #1>
+      <div class="flex flex-row items-center justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Flutter apps can use the FFI library to call native C APIs, and to read, write, allocate, and deallocate native memory.
+         </div>
+         <div class="flex flex-col space-y-16">
+            <div>
+```cpp
+static double k_temperature = 1;
+
+EXPORT double get_temperature() { return k_temperature; }
+```
+            </div>
+            <div>
+```dart
+final lib = DynamicLibrary.open(libraryPath);
+
+final getTemperature = lib
+    .lookup<NativeFunction<DoubleFuncCpp>>('get_temperature')
+    .asFunction<DoubleFunc>();
+
+double _temperature = getTemperature();
+```
+            </div>
+         </div>
+      </div>
+   </template>
+</v-switch>
+
+<!--
+-->
