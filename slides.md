@@ -975,3 +975,55 @@ The Power of Flutter
 
 <!--
 -->
+
+---
+
+::title::
+
+The Flutter Ecosystem
+
+::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+  <div class="flex flex-col items-center justify-center space-y-4">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
+      <img src="./assets/opensource_logo.png" class="w-54 h-54 object-contain mx-auto" />
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
+      <img src="./assets/flutter_pubdev_logo.png" class="w-54 h-54 object-contain mx-auto" />
+    </div>
+  </div>
+
+  <v-clicks class="text-2xl">
+    <ul class="list-disc list-inside space-y-3 max-w-xs">
+      <li>
+        <a href="https://pub.dev/packages/get" class="text-blue-500 underline">
+          get
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/fl_chart" class="text-blue-500 underline">
+          fl_chart
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/google_fonts" class="text-blue-500 underline">
+          google_fonts
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/animations" class="text-blue-500 underline">
+          animations
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/amarula/flutekeyboard" class="text-blue-500 underline">
+          flutekeyboard
+        </a>
+      </li>
+    </ul>
+  </v-clicks>
+</div>
+
+<!--
+-->
