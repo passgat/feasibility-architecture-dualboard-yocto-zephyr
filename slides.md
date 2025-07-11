@@ -1075,3 +1075,36 @@ double _temperature = getTemperature();
 
 <!--
 -->
+
+---
+
+::title::
+
+Effortless Yocto Integration
+
+::body::
+
+<div class="flex flex-row items-center justify-evenly text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      Yocto meta-flutter
+   </div>
+   <v-clicks class="text-2xl">
+      <ul class="list-disc list-inside space-y-3 max-w-xs">
+         <li>
+            Flutter SDK
+         </li>
+         <li>
+            Flutter Engine
+         </li>
+         <li>
+           Flutter Embedder
+         </li>
+         <li>
+            Flutter App Bundle Recipe
+         </li>
+      </ul>
+   </v-clicks>
+</div>
+
+<!--
+-->
