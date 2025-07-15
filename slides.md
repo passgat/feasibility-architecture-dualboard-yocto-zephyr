@@ -34,113 +34,6 @@ About Us
 <div class="flex flex-row justify-around">
    <div class="flex flex-col justify-center items-center">
       <div class="text-3xl font-semibold">
-         Andrea Ricchi
-      </div>
-      <a href="mailto:andrea.ricchi@amarulasolutions.com" class="text-xl text-blue-500 underline">andrea.ricchi@amarulasolutions.com</a>
-      <a href="https://github.com/AndreaRicchi" class="text-xl text-blue-500 underline">
-      https://github.com/AndreaRicchi
-      </a>
-      <hr class="my-4">
-      </hr>
-      <ul class="text-l">
-         <li>C</li>
-         <li>C++ & Qt</li>
-         <li>Dart & Flutter</li>
-         <li>Yocto & Buildroot</li>
-      </ul>
-   </div>
-   <div class="flex flex-col justify-between space-y-2">
-      <div>
-         <img src="./assets/andrea_avatar.jpg" alt="Ricchi-avatar" class="w-54 h-54 rounded-xl shadow" />
-      </div>
-      <iframe
-         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45313.59690505175!2d10.876755850000011!3d44.77877055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f8d2da31002a3%3A0xe3b13d5ff519c63f!2s41012%20Carpi%20MO!5e0!3m2!1sit!2sit!4v1750767724786!5m2!1sit!2sit"
-         class="w-54 h-54 rounded-xl shadow"
-         loading="lazy"
-         referrerpolicy="no-referrer-when-downgrade"
-         >
-      </iframe>
-   </div>
-</div>
-
-<!--
-A quick introduction about myself: I’m Andrea Ricchi, from Carpi, Italy. At Amarula Solutions, I work as an embedded developer. My focus is on GUI applications using C++/Qt or Dart/Flutter, as well as user-space applications and services written in C/C++ and Rust. I actively contribute to open-source software projects, collaborating with the community on real-world challenges, including work on ConnMan, libraries, and UI components. I also have experience with Yocto and Buildroot, contributing recipes and packages to support embedded Linux development.
--->
-
----
-
-::title::
-
-About Us
-
-::body::
-
-<div class="flex flex-row justify-around">
-   <div class="flex flex-col justify-center items-center">
-      <div class="text-3xl font-semibold">
-         Dario Binacchi
-      </div>
-      <a href="mailto:dario.binacchi@amarulasolutions.com" class="text-xl text-blue-500 underline">dario.binacchi@amarulasolutions.com</a>
-      <a href="https://github.com/passgat" class="text-xl text-blue-500 underline">
-      https://github.com/passgat
-      </a>
-      <hr class="my-4">
-      </hr>
-      <ul class="text-l">
-         <li>Embedded Linux Engineer at Amarula Solutions</li>
-         <li>
-            Open Source contributor
-            <ul>
-               <li>Buildroot</li>
-               <li>Yocto</li>
-               <li>
-                  Linux
-                  <ul>
-                     <li>Maintainer for bxCAN and slCAN driver</li>
-                  </ul>
-               </li>
-               <li>
-                  U-Boot
-                  <ul>
-                     <li>Custodian for NAND sub-system with Michael Trimarchi</li>
-                  </ul>
-               </li>
-               <li>Zephyr</li>
-            </ul>
-         </li>
-      </ul>
-   </div>
-   <div class="flex flex-col justify-between space-y-2">
-      <div>
-         <img src="" alt="Binacchi-avatar" class="w-54 h-54 rounded-xl shadow" />
-      </div>
-      <iframe
-         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.7545496510397!2d10.669070376736789!3d44.96898086634357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47802f14b2f0bbd7%3A0xfe1866464beb4f0b!2sLido%20Po%20Luzzara!5e0!3m2!1sen!2sit!4v1750770011439!5m2!1sen!2sit"
-         class="w-54 h-54 rounded-xl shadow"
-         loading="lazy"
-         referrerpolicy="no-referrer-when-downgrade"
-         >
-      </iframe>
-   </div>
-</div>
-
-<!--
-I’m Dario Binacchi and at Amarula, I mainly take care of the operating system side of the boards we work on.
-I’m an open source contributor for projects like Buildroot, U-boot, Linux and Zephyr. Together with my colleague Michael Trimarchi, I am a custodian of the NAND subsystem in U-Boot, and in the Linux kernel, I maintain the BxCAN and SLCAN drivers for the CAN subsystem.
-I live in a small town in the Po valley, north of Italy.
--->
-
----
-
-::title::
-
-About Us
-
-::body::
-
-<div class="flex flex-row justify-around">
-   <div class="flex flex-col justify-center items-center">
-      <div class="text-3xl font-semibold">
          Amarula Solutions
       </div>
       <a href="mailto:info@amarulasolutions.com" class="text-xl text-blue-500 underline">info@amarulasolutions.com</a>
@@ -191,19 +84,112 @@ A core principle that guides our work is our open-source-oriented mindset. We ac
 
 ::title::
 
+About Us
+
+::body::
+
+<div class="flex flex-row justify-around">
+   <div class="flex flex-col justify-center items-center">
+      <div class="text-3xl font-semibold">
+         Andrea Ricchi
+      </div>
+      <a href="mailto:andrea.ricchi@amarulasolutions.com" class="text-xl text-blue-500 underline">andrea.ricchi@amarulasolutions.com</a>
+      <a href="https://github.com/AndreaRicchi" class="text-xl text-blue-500 underline">
+      https://github.com/AndreaRicchi
+      </a>
+      <hr class="my-4">
+      </hr>
+      <ul class="text-l">
+         <li>C</li>
+         <li>C++ & Qt</li>
+         <li>Dart & Flutter</li>
+         <li>Yocto & Buildroot</li>
+      </ul>
+   </div>
+   <div class="flex flex-col justify-between space-y-2">
+      <div>
+         <img src="./assets/andrea_avatar.jpg" alt="Ricchi-avatar" class="w-54 h-54 rounded-xl shadow" />
+      </div>
+      <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45313.59690505175!2d10.876755850000011!3d44.77877055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f8d2da31002a3%3A0xe3b13d5ff519c63f!2s41012%20Carpi%20MO!5e0!3m2!1sit!2sit!4v1750767724786!5m2!1sit!2sit"
+         class="w-54 h-54 rounded-xl shadow"
+         loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"
+         >
+      </iframe>
+   </div>
+</div>
+
+<!--
+A quick introduction about myself: I’m Andrea Ricchi, from Carpi, Italy. At Amarula Solutions, I work as an embedded developer. My focus is on GUI applications using C++/Qt or Dart/Flutter, as well as user-space applications and services written in C/C++ and Rust. I actively contribute to open-source software projects, collaborating with the community on real-world challenges, including work on ConnMan, libraries, and UI components. I also have experience with Yocto and Buildroot, contributing recipes and packages to support embedded Linux development.
+-->
+
+---
+
+::title::
+
+About Us
+
+::body::
+
+<div class="flex flex-row justify-around">
+   <div class="flex flex-col justify-center items-center">
+      <div class="text-3xl font-semibold">
+         Dario Binacchi
+      </div>
+      <a href="mailto:dario.binacchi@amarulasolutions.com" class="text-xl text-blue-500 underline">dario.binacchi@amarulasolutions.com</a>
+      <a href="https://github.com/passgat" class="text-xl text-blue-500 underline">
+      https://github.com/passgat
+      </a>
+      <a href="https://openhub.net/accounts/passgat" class="text-xl text-blue-500 underline">
+      https://openhub.net/accounts/passgat
+      </a>
+      <hr class="mt-4">
+      <ul class="text-l">
+           <li>Buildroot</li>
+           <li>Yocto</li>
+           <li>Linux</li>
+           <li>U-Boot</li>
+           <li>Zephyr</li>
+      </ul>
+   </div>
+   <div class="flex flex-col justify-between space-y-2">
+      <div>
+         <img src="./assets/dario-binacchi-photo.jpeg" alt="Binacchi-avatar" class="w-54 h-54 rounded-xl shadow" />
+      </div>
+      <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22505.986572273636!2d10.752651133928621!3d45.16182115862277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781d40f82e52ed9%3A0xc1c7fd07590e7b85!2s46100%20Mantua%2C%20Province%20of%20Mantua!5e0!3m2!1sen!2sit!4v1752586166160!5m2!1sen!2sit"
+         class="w-54 h-54 rounded-xl shadow"
+         loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"
+         >
+      </iframe>
+   </div>
+</div>
+
+<!--
+I’m Dario Binacchi and at Amarula, I mainly take care of the operating system side of the boards we work on.
+I’m an open source contributor for projects like Buildroot, U-boot, Linux and Zephyr. Together with my colleague Michael Trimarchi, I am a custodian of the NAND subsystem in U-Boot, and in the Linux kernel, I maintain the BxCAN and SLCAN drivers for the CAN subsystem.
+I live in a small town in the Po valley, north of Italy.
+-->
+
+---
+
+::title::
+
 Agenda
 
 ::body::
 
  <v-switch>
    <template #0>
-      <div class="flex flex-row justify-around text-4xl"> Hardware Setup </div>
+      <div class="flex flex-row justify-around text-4xl"> Hardware setup </div>
    </template>
    <template #1>
       <div class="flex flex-row justify-around">
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
             <ul>
-               <li>Hardware Setup</li>
+               <li>Hardware setup</li>
             </ul>
          </div>
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
@@ -215,7 +201,7 @@ Agenda
       <div class="flex flex-row justify-around">
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
             <ul>
-               <li>Hardware Setup</li>
+               <li>Hardware setup</li>
                <li>Yocto</li>
             </ul>
          </div>
@@ -228,7 +214,7 @@ Agenda
       <div class="flex flex-row justify-around">
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
             <ul>
-               <li>Hardware Setup</li>
+               <li>Hardware setup</li>
                <li>Yocto</li>
                <li>Zephyr</li>
             </ul>
@@ -242,7 +228,7 @@ Agenda
       <div class="flex flex-row justify-around">
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
             <ul>
-               <li>Hardware Setup</li>
+               <li>Hardware setup</li>
                <li>Yocto</li>
                <li>Zephyr</li>
                <li>Flutter</li>
@@ -257,7 +243,7 @@ Agenda
       <div class="flex flex-row justify-around">
          <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
             <ul>
-               <li>Hardware Setup</li>
+               <li>Hardware setup</li>
                <li>Yocto</li>
                <li>Zephyr</li>
                <li>Flutter</li>
@@ -281,44 +267,58 @@ preload: false
 
 ::title::
 
-Why
+Back to the roots
 
 ::body::
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<div grid="~ cols-2 gap-4">
 
-const icons = [
-  './assets/flutter_logo.svg',
-  './assets/lvgl_logo.svg',
-  './assets/yocto_logo.svg',
-  './assets/zephyr_logo.svg',
-]
+<div>
 
-const rotation = ref(0)
+  <div class="text-3xl font-bold mb-4">Embedded World 2025</div>
 
-onMounted(() => {
-  const animate = () => {
-    rotation.value = (rotation.value + 0.2) % 360
-    requestAnimationFrame(animate)
-  }
-  animate()
-})
-</script>
+  <ul>
+    <li>Embedded Linux build systems</li>
+    <li>Graphical frameworks</li>
+    <li>FOSS contributions</li>
+    <li>Integration and adaption to new hardware</li>
+    <li>ST authorized partner (*)</li>
+    <li>Using upstream-oriented software to support CRA compliance </li>
+    <li>Designing a reusable infrastructure</li>
+    <li>Showcasing at Engicam booth</li>
+  </ul>
 
-<div class="h-screen pr-32">
-  <div class="relative  w-64 h-64 mx-auto">
-    <template v-for="(icon, i) in icons">
-      <div
-        class="absolute top-1/2 left-1/2"
-        :style="{
-          transform: `rotate(${rotation}deg) rotate(${(360 / icons.length) * i}deg) translate(0, -150px) rotate(-${rotation + (360 / icons.length) * i}deg)`
-        }"
-      >
-        <img :src="icon" class="w-54 h-54" />
-      </div>
-    </template>
-  </div>
+</div>
+
+<div>
+<div class="text-3xl font-bold mb-4">Output</div>
+<ul>
+  <li>Smart thermostat demo</li>
+  <li>Main board
+    <ul>
+      <li>STM32MP257 SOM</li>
+      <li>Yocto</li>
+      <li>Flutter UI</li>
+    </ul>
+  </li>
+  <li>Sensor board
+    <ul>
+      <li>STM32F429I-DISC1 board</li>
+      <li>Temperature, pressure and humidity sensors </li>
+      <li>Zephyr RTOS</li>
+      <li>LVGL UI</li>
+    </ul>
+  </li>
+  <li>Boards communication over CAN bus</li>
+</ul>
+</div>
+</div>
+
+<div class="mt-4 text-sm">
+  <span class="text-black no-underline">(*) </span>
+  <a href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html" class="text-blue-500 underline"> 
+    https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html
+  </a>
 </div>
 
 <!--
@@ -328,9 +328,144 @@ onMounted(() => {
 
 ::title::
 
-Hardware Setup
+Hardware setup - Main board
 
 ::body::
+
+<div class="mt-0">
+<div class="grid grid-cols-[2fr_1.4fr_1.4fr] gap-6 items-start">
+  <!-- Column1: 1: List -->
+  <ul class="list-disc ml-4 text-lg">
+    <li>Engicam EDIMM 2.0 STARTER KIT</li>
+    <li> STM32MP257 SOM
+      <li>2 Arm® Cortex®-A35 up to 1.5 GHz</li>
+      <li>1 Cortex®-M33 at 400 MHz</li>
+      <li>H.264 encoding/decoding</li>
+      <li>3D GPU
+        <li>OPENGL ES3.1 </li>
+        <li> Vulkan 1.3 </li>
+        <li> OpenCL 3.0</li>
+      </li>
+      <li>3 CAN</li>
+    </li>
+    <li>RAM 2GB</li>
+    <li>CAN bus connector</li>
+  </ul>
+
+  <!-- Column 2: Image 1 -->
+  <img src="./assets/EDIMM2.0.jpeg" alt="EDIMM 2.0 JPEG" class="mt-2 w-full h-100 object-contain" />
+
+  <!-- Column 3: Image 2 -->
+  <img src="./assets/EDIMM2.0-schematic.png" alt="EDIMM 2.0 PNG" class="mt-2 w-full h-100 object-contain" />
+</div>
+</div>
+
+<v-clicks>
+<div class="mt-2 font-bold text-4xl text-red-500 text-center">
+  Zero hardware changes
+</div>
+</v-clicks>
+
+<!--
+-->
+
+---
+
+::title::
+
+Hardware setup - Sensor board
+
+::body::
+
+<div class="mt-0">
+<div class="grid grid-cols-[1.8fr_1.2fr_1fr_0.8fr] gap-6 items-start">
+  <!-- Column 1: Un-ordered list -->
+  <ul class="list-disc ml-4 text-lg space-y-2">
+    <li>STM32f429I-DISC1 board
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Arm® Cortex®‑M4 MCU up to 180 Mhz</li>
+        <li>2MB Flash</li>
+        <li>8MB SDRAM</li>
+        <li>2.4" QVGA TFT LCD</li>
+        <li>2 CAN</li>
+      </ul>
+    </li>
+    <li>LPS22HB - pressure</li>
+    <li>SHT4x - temperature & humidity</li>
+    <li>SN65HVD230DR - CAN transceiver</li>
+  </ul>
+
+  <!-- Column 2: image -->
+  <div class="flex flex-col justify-center items-center">
+    <img src="./assets/stm32f429i-disc1.jpeg" alt="stm32f429i-disc1"
+         class="max-h-100 object-contain" />
+  </div>
+  
+  <!-- Column 3: 2 images -->
+  <div class="flex flex-col gap-4">
+    <img src="./assets/SHT4X.jpeg" alt="SHT4X"
+         class="w-full max-h-40 object-contain mx-auto mt-2" />
+    <img src="./assets/LPS22HB.jpeg" alt="LPS22HB"
+         class="w-full max-h-50 object-contain mt-0" />
+  </div>
+
+  <!-- Column 4: yet another image -->
+  <div class="flex flex-col justify-center items-center">
+    <img src="./assets/sn65hvd230.png" alt="SN65HVD230"
+         class="max-h-100 object-contain mt-38" />
+  </div>
+</div>
+</div>
+
+<v-clicks>
+<div class="mt-8 font-bold text-4xl text-red-500 text-center">
+  Hardware changes requested
+</div>
+</v-clicks>
+
+<!--
+-->
+
+---
+
+::title::
+
+Hardware setup - Sensor board
+
+::body::
+
+<div class="mt-0">
+<div class="grid grid-cols-3 gap-6 items-start">
+  <!-- Column 1: Unordered list + image -->
+  <div class="flex flex-col gap-4">
+    <ul class="list-disc ml-4 text-lg space-y-2 mt-2">
+      <li>Sensors wiring to I²C bus</li>
+      <li>CAN bus wiring
+        <ul class="list-disc ml-6 space-y-1">
+          <li>Fix USB OTG conflicts</li>
+          <li>Transceiver</li>
+          <li>Connector</li>
+        </ul>
+      </li>
+    </ul>
+
+  <!-- Image -->
+  <img src="./assets/CAN-fix.jpeg" alt="CAN-fix"
+       class="w-full max-h-100 object-contain mt-12" />
+
+  </div>
+
+  <!-- Column 2 -->
+  <img src="./assets/sensor-board-front.jpeg" alt="sensor-board-front"
+       class="w-full max-h-110 object-contain" />
+
+  <!-- Column 3 -->
+  <div class="flex flex-col gap-4">
+    <img src="./assets/sensor-board-back.jpeg" alt="sensor-board-back"
+         class="w-full max-h-110 object-contain mt-4" />
+  </div>
+</div>
+</div>
 
 <!--
 -->
@@ -785,102 +920,545 @@ KAS Usage
 
 ::title::
 
-The UI
+Zephyr
 
 ::body::
 
-<v-switch>
-  <template #0>
-    <body class="flex flex-col h-full text-center">
-      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
-        <div class="w-1/2">Sensor Board</div>
-        <div class="w-1/2">Master Board</div>
-      </div>
-    </body>
-  </template>
+<div class="mt-0 flex space-x-24 w-full">
 
-  <template #1>
-    <body class="flex flex-col h-full text-center">
-      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
-        <div class="w-1/2">Sensor Board</div>
-        <div class="w-1/2">Master Board</div>
-      </div>
-      <div class="flex-1 flex flex-col justify-between py-4">
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
-            <div class="w-1/2">Cortex‑M4 MCU</div>
-            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
-          </div>
-        </div>
-      </div>
-    </body>
-  </template>
+  <!-- left column -->
+  <ul class="flex-1 list-disc list-inside space-y-0 text-xl">
+    <li class="font-semibold">Open source RTOS</li>
+    <li class="font-semibold">Low memory footprint</li>
+    <li class="font-semibold">High portability - 500+ boards</li>
+    <li class="font-semibold">Secure and safe</li>
+    <li class="font-semibold">LTS support</li>
+      <li class="font-semibold">
+        Linux like
+        <ul class="list-disc ml-4 font-normal space-y-1">
+          <li>Kconfig</li>
+          <li>Devicetree</li>
+        </ul>
+      </li>
+  </ul>
 
-  <template #2>
-    <body class="flex flex-col h-full text-center">
-      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
-        <div class="w-1/2">Sensor Board</div>
-        <div class="w-1/2">Master Board</div>
-      </div>
-      <div class="flex-1 flex flex-col justify-between py-4">
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
-            <div class="w-1/2">Cortex‑M4 MCU</div>
-            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
-          </div>
-        </div>
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
-            <div class="w-1/2">Zephyr</div>
-            <div class="w-1/2">Yocto</div>
-          </div>
-        </div>
-      </div>
-    </body>
-  </template>
+  <!-- Right column -->
+  <ul class="flex-1 list-disc list-inside space-y-1 text-xl">
+      <li class="font-semibold">
+        Ecosystem - not only the kernel
+        <ul class="list-disc ml-4 font-normal space-y-1">
+          <li>Developing tools - west</li>
+          <li>Device drivers</li>
+	  <li>Connectivity</li>
+          <li>Logging</li>
+          <li>Tracing</li>
+	  <li>Power management</li>
+          <li>Much more</li>
+        </ul>
+      </li>
+  </ul>
 
-  <template #3>
-    <body class="flex flex-col h-full text-center">
-      <div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed">
-        <div class="w-1/2">Sensor Board</div>
-        <div class="w-1/2">Master Board</div>
-      </div>
-      <div class="flex-1 flex flex-col justify-between py-4">
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
-            <div class="w-1/2">Cortex‑M4 MCU</div>
-            <div class="w-1/2">Dual‑Core Cortex‑A35 <br /> + Cortex‑M33</div>
-          </div>
-        </div>
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-normal leading-relaxed">
-            <div class="w-1/2">Zephyr</div>
-            <div class="w-1/2">Yocto</div>
-          </div>
-        </div>
-        <div>
-          <div class="w-full border-t border-gray-300 mb-2"></div>
-          <div class="flex flex-row justify-evenly w-full text-2xl font-medium leading-relaxed">
-            <div class="w-1/2">LVGL</div>
-            <div class="w-1/2">Flutter</div>
-          </div>
-        </div>
-      </div>
-    </body>
-  </template>
-</v-switch>
+</div>
+
+<v-clicks>
+  <div class="mt-24 font-bold text-4xl text-red-500 text-center">
+   Perfect to run on the sensor board 
+  </div>
+</v-clicks>
 
 <!--
-Since both boards have displays, we wanted to implement UI applications to showcase not only the hardware capabilities but also our experience in embedded UI development.
+-->
 
-For the sensor board, the choice was straightforward. Given the limited processing power and the use of Zephyr, we chose LVGL—the most popular free and open-source graphics library for embedded systems. It’s lightweight, efficient, and well-suited for MCUs.
+---
 
-On the master board, running Linux, we had a wide range of UI frameworks to choose from. In the past, I’ve mainly worked with Qt, but due to the licensing changes in Qt6, we decided to explore an open-source alternative. We chose Flutter, a framework well known in the mobile world, and now gaining traction in the embedded Linux community.
+::title::
+
+Zephyr - Application
+
+::body::
+
+<div class="mt-0">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li>
+    Build system
+    <ul class="font-normal">
+      <li> Based on CMake</li>
+      <li> Application centric</li>
+    </ul>
+  </li>
+  <li>
+    Application directory
+    <ul class="font-normal">
+      <li>
+        CMakeLists.txt
+	<li> Where to find application files - src/*.c </li>
+	<li> Link application to the Zephyr’s build system </li>
+      </li>
+      <li>
+        app.overlay
+	<li> Devicetree changes </li>
+	<li> Apply to the Zephyr devicetree board </li>
+	<li class="text-red-600"> Turn STM32F429I-DISC1 into sensor board</li>
+      </li>
+      <li>
+        prj.conf
+	<li> Kconfig fragment </li>
+	<li> Merge with Zephyr configuration</li>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<div>
+
+```
+<app>
+├── CMakeLists.txt
+├── app.overlay
+├── prj.conf
+└── src
+    └── *.c
+```
+
+</div>
+
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Zephyr - Application types
+
+::body::
+
+<div class="mt-2">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li> Zephyr repository application </li>
+  <li class="text-red-600">
+    Zephyr workspace application
+    <ul class="font-normal text-black">
+      <li> Avoid unnecessary changes to Zephyr repo</li>
+      <li> Use a reference workspace application (*)</li>
+    </ul>
+  </li>
+  <li> Zephyr freestanding application </li>
+</ul>
+
+```
+# Zephyr workspace application for sensor board
+
+$ source ~/zephyrproject/.venv/bin/activate
+$ west init -m https://github.com/amarula/ew_lvgl_demo --mr main \
+     	  ew_lvgl_demo_workspace
+$ cd ew_lvgl_demo_workspace
+$ west update
+$ tree
+├── ew_lvgl_demo
+|   └── app
+├── modules
+|   ├── hal
+|   │   └── stm32
+|   └── lib
+|       └── gui
+|           └── lvgl
+└── zephyr
+
+```
+
+</div>
+
+<div>
+
+```
+# Zephyr repository application
+
+zephyrproject/
+└─── zephyr/
+     ├── ...
+     └── samples/
+         └── app/
+```
+
+```
+# Zephyr workspace application
+
+zephyrproject/
+├─── zephyr/
+├─── ...
+└─── applications/
+     └── app/
+```
+
+```
+# Zephyr freestanding application
+
+<home>/
+├─── zephyrproject/
+│     ├─── .west/
+│     │    └─── config
+│     ├── zephyr/
+│     └── ...
+│
+└─── app/
+```
+
+</div>
+
+</div>
+
+<div class="-mt-1 text-sm">
+  <span class="text-black no-underline">(*) </span>
+  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
+    https://github.com/zephyrproject-rtos/example-application
+  </a>
+</div>
+
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Zephyr - CMakeLists.txt
+
+::body::
+
+<div class="-mt-30">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li>
+    find_package()
+    <ul class="font-normal text-black">
+      <li>
+        Pull in the Zephyr build system
+	<li> Create a CMake target named app</li>
+      </li>
+      <li> $ENV{ZEPHYR_BASE} set by west build command</li>
+    </ul>
+  </li>
+  <li>
+    target_sources()
+    <ul class="font-normal text-black">
+      <li> Add application sources to the app target</li>
+    </ul>
+  </li>
+</ul>
+
+
+</div>
+
+<div>
+
+```
+# app/CMakeLists.txt
+
+cmake_minimum_required(VERSION 3.13)
+
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+
+project(Amarula-Demo VERSION 0.1.0 LANGUAGES C)
+
+target_sources(app
+               PRIVATE src/main.c
+               src/lvgl_gui.h
+               src/lvgl_gui.c
+               resources/temperature.c
+               resources/humidity.c
+               resources/pressure.c
+               resources/mono_font.c
+               src/led.h
+               src/led.c
+               src/can.h
+               src/can.c)
+```
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+ts {5|9-20|all}
+-->
+
+---
+
+::title::
+
+Zephyr - app.overlay
+
+::body::
+
+<div class="-mt-8">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li> Extend the STM32F429I-DISC1 board </li>
+  <li> Align with hardware changes </li> 
+  <li> Populate the i2c3 bus
+    <ul class="font-normal text-black">
+      <li> Temperature & himudity sensor @ 0x44 </li>
+      <li> Pressure sensor @ 0x5c </li>
+    </ul>
+  </li>
+  <li> Enable CAN controller
+    <ul class="font-normal text-black">
+      <li> Disable USB OTG - pins shared </li>
+      <li> No transceiver description </li>
+    </ul>
+  </li>
+</ul>
+
+
+</div>
+
+<div>
+
+```
+# app/boards/stm32f429i_disc1.overlay
+
+&i2c3 {
+	sht4x@44 {
+		compatible = "sensirion,sht4x";
+		status = "okay";
+		reg = <0x44>;
+		repeatability = <2>;
+	};
+
+	lps22hb@5c {
+		compatible = "st,lps22hb-press";
+		status = "okay";
+		reg = <0x5c>;
+	};
+};
+
+zephyr_udc0: &usbotg_hs {
+	status = "disabled";
+};
+
+&can2 {
+	pinctrl-0 = <&can2_rx_pb12 &can2_tx_pb13>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+```
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Zephyr - prj.conf
+
+::body::
+
+<div class="-mt-38">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<div class="mb-2 font-bold">Setup all the configurations required by the application</div>
+
+<ul>
+  <li>I2C bus</li>
+  <li>Sensor</li>
+  <li>CAN bus</li>
+  <li>LED</li>
+  <li>Graphical library</li>
+</ul>
+
+</div>
+
+<div>
+
+```
+# app/prj.conf
+
+CONFIG_LOG=y
+CONFIG_SHELL=y
+
+CONFIG_I2C=y
+CONFIG_SENSOR=y
+
+CONFIG_CAN=y
+
+CONFIG_LED=y
+
+CONFIG_DISPLAY=y
+
+CONFIG_LVGL=y
+CONFIG_LV_USE_LABEL=y
+CONFIG_LV_USE_BTN=y
+CONFIG_LV_...=y
+```
+
+</div>
+
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Zephyr - app/*.c
+
+::body::
+
+<div class="mt-2">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li> Clear API provided by Zephyr and its module </li>
+  <li> Lot of application examples
+    <ul class="font-normal text-black">
+      <li> samples/drivers/display </li>
+      <li> samples/subsys/display/lvgl </li>
+      <li> samples/net/sockets/can </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<div class="text-center">
+    <img src="./assets/zephyr_samples_lvgl.jpeg" alt="zephyr_samples_assets" class="w-35 h-60 inline-block" />
+</div>
+
+</div>
+
+<div class="mt-2">
+
+```
+$ source ~/zephyrproject/.venv/bin/activate
+$ cd ~/zephyrproject/zephyr
+
+$ west build --pristine -b stm32f429i_disc1 samples/drivers/display
+$ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts/board/stm32f429disc1.cfg
+
+$ west build --pristine -b stm32f429i_disc1 samples/subsys/display/lvgl
+$ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts/board/stm32f429disc1.cfg
+
+# change boards/st/stm32f429i_disc1/stm32f429i_disc1.dts to enable CAN2 controller
+$ west build --pristine -b stm32f429i_disc1 samples/net/sockets/can/
+$ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts/board/stm32f429disc1.cfg
+```
+
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Zephyr - FOSS contribute
+
+::body::
+
+<div class="mt-0">
+<div grid="~ cols-2 gap-4">
+
+  <div>
+    <ul class="font-bold">
+      <li>
+        Devicetree
+        <ul class="font-normal text-black">
+          <li> 2 bxCAN controllers on STM32F429 MCU </li>
+          <li> They share RAM (512 bytes) and filters </li>
+	  <li> CAN1 primary controller </li>
+	  <li> CAN2 secondary controller </li>
+          <li> Enable CAN1 RCC clock to use CAN2</li>
+	  <li> Need to fix a regression by code re-factoring</li>
+	  <li> Curious about bxCAN controller ? (*)</li>
+        </ul>
+      </li>
+      <li>
+        Documentation
+        <ul class="font-normal text-black">
+          <li> Fix flashing section </li>
+          <li> LTDC hardware now supported </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+<div class="mt-2">
+
+```
+/ {
+	chosen {
+		zephyr,canbus = &can2;
+	};
+
+	soc {
+		can2: can@40006800 {
+		        clocks = <&rcc STM32_CLOCK_BUS_APB1 0x06000000>;
+		};
+	};
+};
+```
+
+```
+~/zephyrproject/zephyr$ git log --oneline --author="Dario Binacchi"
+2c3294b079cf dts: arm: st: re-enable master can gating clock for can2
+ed48de2583af boards: st: stm32f429i_disc1: doc: re-work flashing section
+3f6978e913ff boards: st: stm32f429i_disc1: doc: support LTDC hardware
+7bca40cceda4 boards: st: stm32f429i_disc1: doc: fix flashing info
+```
+</div>
+
+</div>
+
+<div class="mt-22 text-sm">
+  <span class="text-black no-underline">(*) </span>
+  <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline"> 
+    https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems
+  </a>
+</div>
+
+</div>
+
+<!--
 -->
 
 ---
@@ -890,6 +1468,384 @@ On the master board, running Linux, we had a wide range of UI frameworks to choo
 LVGL
 
 ::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      Light and Versatile Graphics Library
+   </div>
+   <div>
+      <ul class="text-xl list-disc list-inside space-y-3 max-w-xs">
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Open source</li>
+	 <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Written in C</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Low memory footprint</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Wide range of widgets</li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Support input devices</li>
+	 <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Zephyr packaged with LVGL</li>
+      </ul>
+    </div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Zephyr integration
+
+::body::
+
+<div class="-mt-12">
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+  <li>
+    modules/lib/gui/lvgl/
+    <ul class="font-normal">
+      <li>LVGL codebase</li>
+      <li>west update</li>
+      <li>Version in lvgl.h - 8.4.0</li>
+    </ul>
+  </li>
+  <li>
+    zephyr/modules/gui/lvgl
+    <ul class="font-normal">
+      <li>Zephyr Kconfig options</li>
+      <li>Zephyr glue code
+        <li>DT_CHOSEN(zephyr_display)</li>
+        <li>SYS_INIT(lvgl_init, APPLICATION, ...)</li>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div>
+```
+~zephyrprojects/
+ ├── modules
+ │   └── lib
+ │       └── gui
+ │           └── lvgl
+ └── zephyr
+     └── modules
+         └── lvgl
+
+```
+
+```
+int lvgl_init(void)
+{
+	for (int i = 0; i < DT_ZEPHYR_DISPLAYS_COUNT; i++) {
+		if (!device_is_ready(display_dev[i])) {
+			LOG_ERR("Display device %d is not ready", i);
+			return -ENODEV;
+		}
+	}
+
+	for (int i = 0; i < DT_ZEPHYR_DISPLAYS_COUNT; i++) {
+		err = lvgl_allocate_rendering_buffers(lv_displays[i]);
+	}
+
+	err = lvgl_init_input_devices();
+}
+
+```
+</div>
+
+</div>
+
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Display Kconfig
+
+::body::
+
+<div class="-mt-6">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+<li> Display subsystem </li>
+<li>
+Display driver
+<ul class="font-normal">
+<li> ILI9341 from Ilitek</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+```
+# app/prj.conf
+
+CONFIG_DISPLAY=y
+```
+
+```
+# drivers/display/Kconfig.ili9xxx
+
+config ILI9341
+	bool "ILI9341 display driver"
+	default y
+	depends on DT_HAS_ILITEK_ILI9341_ENABLED
+	select MIPI_DBI
+	select ILI9XXX
+	help
+	  Enable driver for ILI9341 display driver.
+```
+
+```
+# boards/st/stm32f429i_disc1/stm32f429i_disc1.dts
+
+ili9341: ili9341@0 {
+	 compatible = "ilitek,ili9341";
+	 ...
+    }
+```
+
+```
+# build/zephyr/.config
+
+CONFIG_ILI9341=y
+```
+</div>
+
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Display DTS
+
+::body::
+
+<div class="mt-2">
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+<li> zephyr,display property </li>
+<li> zephyr,lvgl-pointer-input compatible </li>
+<li>
+lvgl_init()
+<ul class="font-normal">
+<li> Just before the application code (main)</li>
+<li> Turn on display</li>
+<li> Turn on input devices - touchscreen, mouse, ... </li>
+</ul>
+</li>
+<li> Hardware independent application code </li>
+
+</ul>
+
+</div>
+
+<div>
+
+```
+# boards/st/stm32f429i_disc1/stm32f429i_disc1.dts
+
+chosen {
+	...
+	zephyr,display = &ltdc;
+	zephyr,touch = &stmpe811;
+};
+
+lvgl_pointer {
+	compatible = "zephyr,lvgl-pointer-input";
+	input = <&stmpe811>;
+};
+```
+
+```
+# modules/lvgl/lvgl.c
+
+SYS_INIT(lvgl_init, APPLICATION, CONFIG_LV_Z_INIT_PRIORITY);
+```
+
+```
+$ west build -t initlevels
+EARLY ...
+PRE_KERNEL_1 ...
+PRE_KERNEL_2 ...
+POST_KERNEL ...
+ __init___device_dts_ord_99: ili9xxx_init(__device_dts_ord_99)
+ __init___device_dts_ord_122: stm32_ltdc_init(__device_dts_ord_122)
+ __init___device_dts_ord_16: stmpe811_init(__device_dts_ord_16)
+APPLICATION
+ __init_lvgl_init: lvgl_init(NULL)
+SMP
+```
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Library Kconfig
+
+::body::
+
+<div class="mt-2">
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+<li> Enable LVGL </li>
+<li> Enable only the used widgets </li>
+<li> Fine-tune the application footprint </li>
+</ul>
+
+</div>
+
+<div>
+
+```
+# app/prj.cof
+
+CONFIG_LVGL=y
+
+CONFIG_LV_Z_MEM_POOL_SIZE=16384
+CONFIG_LV_Z_SHELL=y
+CONFIG_LV_MEM_CUSTOM=y
+
+CONFIG_LV_USE_LABEL=y
+CONFIG_LV_USE_BTN=y
+CONFIG_LV_USE_ARC=y
+CONFIG_LV_USE_IMG=y
+CONFIG_LV_FONT_MONTSERRAT_16=y
+CONFIG_LV_FONT_MONTSERRAT_32=y
+
+```
+</div>
+
+</div>
+
+</div>
+
+<v-clicks>
+  <div class="mt-44 font-bold text-4xl text-red-500 text-center">
+    Ready to use LVGL
+  </div>
+</v-clicks>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Application
+
+::body::
+
+<div class="mt-0">
+<div grid="~ cols-2 gap-4">
+
+<div>
+
+<ul class="font-bold">
+<li>
+In LVGL Everything is an object
+<ul class="font-normal">
+<li> Create the object </li>
+<li> Setup its properties </li>
+<li> Place on the screen </li>
+</ul>
+</li>
+<li> Start from the basic data flow (*)
+<ul class="list-decimal">
+<li class="text-blue-400"> Driver initialization - Zephyr </li>
+<li class="text-blue-400"> Run lvgl_init() - Zephyr </li>
+<li class="text-blue-400"> Create display and input devices - Zephyr </li>
+<li> Create GUI </li>
+<li> Read data from sensors </li>
+<li> Update widgets properties </li>
+<li> Refresh the screen </li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+```
+/* Create a white label, set its text and align it to the center */
+lv_obj_t * label = lv_label_create(lv_screen_active());
+lv_label_set_text(label, "Hello world");
+lv_obj_set_style_text_color(lv_screen_active(), lv_color_hex(0xffffff),
+							LV_PART_MAIN);
+lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+```
+
+```
+void main(void) {
+
+     struct sensor_value temp;
+     const struct device *const sht =
+     	   	  DEVICE_DT_GET_ANY(sensirion_sht4x);
+
+     gui_init();
+
+     for (;;) {
+	      sensor_channel_get(sht, SENSOR_CHAN_AMBIENT_TEMP, &sv_temp);
+
+	      gui_set_temperature(temp);
+
+	      lv_timer_handler();
+	      k_sleep(K_MSEC(5));
+     }
+}
+```
+</div>
+
+</div>
+
+<div class="mt-8 text-sm">
+  <span class="text-black no-underline">(*) </span>
+  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
+    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+  </a>
+</div>
+
+</div>
 
 <!--
 -->
@@ -1104,6 +2060,174 @@ Effortless Yocto Integration
          </li>
       </ul>
    </v-clicks>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Acknowledgements
+
+::body::
+
+<div class="mt-0">
+This talk was made possible thanks to the help and encouragement of many
+people.
+</div>
+
+<div class="mt-6">
+A special thanks to Alberto Bianchi for the designing and building the hardware,<br>
+Michael Trimarchi for the Yocto operating system integration, and Eduardo Gonzalez<br>
+for developing the application on the sensor board.
+</div>
+
+<div class="mt-6">
+Thanks to Benjamin Cabé, Erwan Gouriou, Marwa, Henrik Brix Andersen, Mathieu CHOPLAIN<br>
+and Abderrahmane Jarmouni for the review and acceptance of the Zephyr project patches.
+</div>
+
+<div class="mt-6">
+Thanks to Alberto Panizzo, Michael Trimarchi and Vera Binacchi for the slides review<br>
+and refinement.
+</div>
+
+<div class="mt-6">
+Thanks to Amarula and ELCE organization for the assistance and support.
+</div>
+
+<div class="mt-18">
+We are sorry If we forgot someone :).
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Resources
+
+::body::
+
+<div class="mt-3 text-xl">
+Hands-on
+<div class="ml-3 text-sm">
+  <a href="https://github.com/amarula/ew_2025_flutter_demo" class="text-blue-500 underline">
+    https://github.com/amarula/ew_2025_flutter_demo
+  </a><br>
+  <a href="https://github.com/amarula/ew_2025_lvgl_demo" class="text-blue-500 underline">
+    https://github.com/amarula/ew_2025_lvgl_demo
+  </a>
+</div>
+</div>
+
+<div class="mt-3 text-xl">
+Hardware
+<div class="ml-3 text-sm">
+  <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32mp257.html" class="text-blue-500 underline">
+    https://www.st.com/en/microcontrollers-microprocessors/stm32mp257.html
+  </a><br>
+  <a href="https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board" class="text-blue-500 underline">
+    https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board
+  </a><br>
+  <a href="https://www.st.com/en/evaluation-tools/32f429idiscovery.html" class="text-blue-500 underline"> 
+    https://www.st.com/en/evaluation-tools/32f429idiscovery.html
+  </a><br>
+  <a href="https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok" class="text-blue-500 underline"> 
+    https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok
+  </a><br>
+  <a href="https://sensirion.com/products/catalog/SENSEVAL-SHT4XV1" class="text-blue-500 underline"> 
+    https://sensirion.com/products/catalog/SENSEVAL-SHT4XV1
+  </a><br>
+    <a href="https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf?ts=1752742041247&ref_url=https%253A%252F%252Fwww.google.com%252F" class="text-blue-500 underline"> 
+    https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf?ts=1752742041247&ref_url=https%253A%252F%252Fwww.google.com%252F
+  </a><br>
+    <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline"> 
+    https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems
+  </a>
+</div>
+</div>
+
+<div class="mt-3 text-xl">
+LVGL
+<div class="ml-3 text-sm">
+  <a href="https://docs.lvgl.io/master/index.html" class="text-blue-500 underline"> 
+    https://docs.lvgl.io/master/index.html
+  </a><br>
+  <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline"> 
+    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+  </a><br>
+  <a href="https://docs.lvgl.io/master/details/integration/os/zephyr.html" class="text-blue-500 underline"> 
+    https://docs.lvgl.io/master/details/integration/os/zephyr.html
+  </a>
+</div>
+
+</div>
+
+<div class="mt-3 text-xl">
+Zephyr
+<div class="ml-3 text-sm">
+  <a href="https://www.zephyrproject.org/" class="text-blue-500 underline"> 
+    https://www.zephyrproject.org/
+  </a><br>
+  <a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html" class="text-blue-500 underline"> 
+    https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+  </a><br>
+  <a href="https://docs.zephyrproject.org/latest/contribute/index.html" class="text-blue-500 underline"> 
+    https://docs.zephyrproject.org/latest/contribute/index.html
+  </a>
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Resources
+
+::body::
+
+<div class="-mt-54 text-xl">
+Zephyr
+<div class="ml-3 text-sm">
+  <a href="https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html" class="text-blue-500 underline"> 
+    https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html
+  </a><br>
+  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
+    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+  </a>
+</div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Q/A
+
+::body::
+
+<div grid="~ cols-2 gap-4 items-center">
+  <div>
+    <div class="text-5xl -mt-20 font-bold">Thanks for your time</div>
+    <div class="text-4xl mt-20 ml-10">Questions</div>
+    <div class="text-4xl mt-8 ml-20">Comments</div>
+    <div class="text-4xl mt-8 ml-40">Suggestions</div>
+  </div>
+
+  <div>
+    <img src="/assets/question.jpeg" class="w-4/5 align-top" />
+  </div>
 </div>
 
 <!--
