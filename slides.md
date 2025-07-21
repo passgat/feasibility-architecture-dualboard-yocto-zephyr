@@ -474,7 +474,7 @@ Hardware setup - Sensor board
 
 ::title::
 
-The Yocto Project
+Yocto
 
 ::body::
 
@@ -500,57 +500,36 @@ The Yocto Project
 
 ::title::
 
-Our Setup
+Yocto - Layers Setup
 
 ::body::
 
-## Yocto folder structure
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="max-w-xs leading-relaxed">
+      This configuration combines core OpenEmbedded layers with hardware-specific BSPs and additional functionality layers.
+   </div>
+   <div>
+```{1|3-10|11-13|14|15-16|17}
+# conf/bblayers.conf
 
-<br>
-
-````md magic-move
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
-bitbake
-openembedded-core
-meta-openembedded
-[...]
+BBLAYERS ?= " \
+    ${TOPDIR}/../work/openembedded-core/meta" \
+    ${TOPDIR}/../work/meta-openembedded/meta-multimedia \
+    ${TOPDIR}/../work/meta-openembedded/meta-gnome \
+    ${TOPDIR}/../work/meta-openembedded/meta-oe \
+    ${TOPDIR}/../work/meta-openembedded/meta-networking \
+    ${TOPDIR}/../work/meta-openembedded/meta-webserver \
+    ${TOPDIR}/../work/meta-openembedded/meta-python \
+    ${TOPDIR}/../work/meta-st-openstlinux \
+    ${TOPDIR}/../work/meta-st-stm32mp \
+    ${TOPDIR}/../work/meta-st-stm32mp-addons \
+    ${TOPDIR}/../work/meta-engicam-st \
+    ${TOPDIR}/../work/meta-clang \
+    ${TOPDIR}/../work/meta-flutter \
+    ${TOPDIR}/../work/meta-amarula-demo
 ```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
-[...]
-meta-st-openstlinux
-meta-st-scripts
-meta-st-stm32mp
-meta-st-stm32mp-addons
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
-[...]
-meta-engicam-st
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
-[...]
-meta-clang
-meta-flutter
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ ls -l
-[...]
-meta-amarula-demo
-[...]
-```
-
-````
+   </div>
+</div>
 
 <!--
 -->
@@ -559,7 +538,7 @@ meta-amarula-demo
 
 ::title::
 
-The challanges
+Yocto - Challanges
 
 ::body::
 
@@ -617,82 +596,73 @@ In our project, we initially faced a version incompatibility between the officia
 
 ::title::
 
-Our configuration
+Yocto - Configuration
 
 ::body::
 
-## local.conf
-
-<br>
-
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="max-w-xs leading-relaxed">
+      This configuration is tailored for efficient, reproducible builds and integrates
+      project-specific components like.
+   </div>
+   <div>
 ````md magic-move
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   BB_NUMBER_THREADS ?= "12"
-   PARALLEL_MAKE ?= "-j 6"
-[...]
+```
+# conf/local.conf
+
+MACHINE ??= "stm32mp25-icore"
+DISTRO ??= "openstlinux-weston"
+BBMULTICONFIG ?= ""
+
+BB_NUMBER_THREADS ?= "12"
+PARALLEL_MAKE ?= "-j 6"
+
+# ST specific
+EULA_FILE_ST = "1"
+ACCEPT_EULA_stm32mp25-icore = "1"
+GLIBC_GENERATE_LOCALES = "en_GB.UTF-8 en_US.UTF-8"
+IMAGE_LINGUAS ?= "en-gb"
+INHERIT += "devshell"
+RM_OLD_IMAGE = "1"
+
+# Force the usage of debian package
+PACKAGE_CLASSES = "package_deb"
+
+# Setup environment for builds binary reproducibility
+REPRODUCIBLE_TIMESTAMP_ROOTFS = ""
 ```
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   MACHINE ??= "stm32mp25-icore"
-   DISTRO ??= "openstlinux-weston"
-[...]
 ```
+# conf/local.conf
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   EULA_FILE_ST = "1"
-   ACCEPT_EULA_stm32mp25-icore = "1"
-   GLIBC_GENERATE_LOCALES = "en_GB.UTF-8 en_US.UTF-8"
-   IMAGE_LINGUAS ?= "en-gb"
-   INHERIT += "devshell"
-   RM_OLD_IMAGE = "1"
-[...]
-```
+# Setup eSDK
+SDK_EXT_TYPE="minimal"
+SDK_INCLUDE_TOOLCHAIN="1"
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   PACKAGE_CLASSES = "package_deb"
-[...]
-```
+# Enable PR server to avoid version-going-backward issue
+PRSERV_HOST = "localhost:0"
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   SDK_EXT_TYPE = "minimal"
-   SDK_INCLUDE_TOOLCHAIN = "1"
-[...]
-```
+# Archiver
+HOSTTOOLS += "xz truncate"
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   PRSERV_HOST = "localhost:0"
-[...]
-```
+# Flutter
+IMAGE_INSTALL:append = " \
+    flutter-engine \
+    flutter-engine \
+    flutter-wayland-client \
+    ew-2025-flutter-demo-can-lib \
+    ew-2025-flutter-demo \
+    connman \
+    connman-client \
+"
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat build/conf/local.conf
-[...]
-   IMAGE_INSTALL:append = " \
-      flutter-engine \
-      flutter-wayland-client \
-      ew-2025-flutter-demo-can-lib \
-      ew-2025-flutter-demo \
-      connman \
-      connman-client \
-   "
-   TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
-[...]
+TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
 ```
 
 ````
+   </div>
+</div>
 
 <!--
 To ensure a smooth and consistent build process, we customised our Yocto local.conf. We optimised build performance with parallelism settings (BB_NUMBER_THREADS and PARALLEL_MAKE), and enabled STMicroelectronics-specific licensing by accepting the EULA required for STM32MP25-based platforms. For localisation, we specified UTF-8 locales and language support. We chose the Debian package format (package_deb) for improved integration with Flutter and system updates, and enabled reproducible builds by controlling root file system timestamps. The configuration also supports extensible SDK generation and sets up the PR server to prevent version rollback issues in packaged recipes. Finally, we extended the image with key components for our Flutter-based UI, including the Flutter engine, Wayland client, and our custom application demos, ensuring that everything needed for development and deployment is included out of the box.
@@ -702,7 +672,7 @@ To ensure a smooth and consistent build process, we customised our Yocto local.c
 
 ::title::
 
-Meet KAS
+Yocto - KAS
 
 ::body::
 
@@ -734,24 +704,24 @@ With the power of Yocto and the simplicity of KAS, our result is this YAML file 
 
 ::title::
 
-Our KAS config
+Yocto - KAS config
 
 ::body::
 
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="max-w-xs leading-relaxed">
+      A single YAML file that defines both layers and build configuration, making the Yocto setup reproducible, portable, and easy to manage.
+   </div>
+   <div>
 ````md magic-move
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
+```{1|3-6|7-23}
+# .config.yaml
+
 machine: stm32mp25-icore
 distro: openstlinux-weston
 target: st-image-weston
-[...]
-```
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
 repos:
     bitbake:
         url: "https://git.openembedded.org/bitbake"
@@ -765,78 +735,12 @@ repos:
         layers:
             meta:
 
-    meta-openembedded:
-        url: "https://github.com/openembedded/meta-openembedded"
-        commit: 1235dd4ed4a57e67683c045ad76b6a0f9e896b45
-        layers:
-            meta-gnome:
-            meta-multimedia:
-            meta-networking:
-            meta-oe:
-            meta-python:
-            meta-webserver:
 [...]
 ```
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
-    meta-st-openstlinux:
-        url: "https://github.com/STMicroelectronics/meta-st-openstlinux"
-        commit: a25d4806880cdc73471e3c1824a87901b5a4e44f
-
-    meta-st-stm32mp:
-        url: "https://github.com/STMicroelectronics/meta-st-stm32mp"
-        commit: dd13b8318b78f956086efade81de9c72c0e97187
-
-    meta-st-stm32mp-addons:
-        url: "https://github.com/STMicroelectronics/meta-st-stm32mp-addons"
-        commit: 97617f888513d89c4070f59bfdfa2a91e8175d5c
-
-    meta-st-scripts:
-        url: "https://github.com/STMicroelectronics/meta-st-scripts"
-        commit: 27b8b0df3b2f3515d5e51de65f54eff00ddacb82
-        layers:
-            .: excluded
-[...]
 ```
+[...]
 
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
-    meta-engicam-st:
-        url: "https://github.com/amarula/meta-engicam-st"
-        branch: "scarthgap"
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
-    meta-clang:
-        url: "https://github.com/kraj/meta-clang"
-        branch: "scarthgap"
-
-    meta-flutter:
-        url: "https://github.com/meta-flutter/meta-flutter"
-        branch: "scarthgap"
-        layers:
-            .:
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
-    meta-amarula-demo:
-        url: "https://github.com/amarula/meta-amarula-demo.git"
-        commit: 611f500415bd9f141b8b4bc6782c8b596f9b56ad
-[...]
-```
-
-```bash
-ricchi@maratona:~/work/ew_2025_stmp2_demo$ cat .config.yaml
-[...]
 local_conf_header:
     standard: |
         BB_NUMBER_THREADS ?= "12"
@@ -862,10 +766,11 @@ local_conf_header:
             connman-client \
         "
         TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
-[...]
 ```
 
 ````
+   </div>
+</div>
 
 <!--
 -->
@@ -881,37 +786,31 @@ local_conf_header:
 
 ::title::
 
-KAS Usage
+Yocto - KAS Usage
 
 ::body::
 
-<v-switch>
-
-  <!-- Step 0 -->
-  <template #0>
-
-  ## Run KAS on host
-  <br></br>
-  ```bash
-  $ kas checkout
-  $ kas build
-  ```
-
-  </template>
-
-  <!-- Step 1 -->
-  <template #1>
-
-  ## Run KAS inside a build container
-  <br></br>
-  ```bash
+<div class="flex flex-col item-center justify-left text-2xl">
+   <div class="font-semibold leading-relaxed">
+      Run KAS on host
+   </div>
+   <div>
+```bash
+   $ kas checkout
+   $ kas build
+```
+   </div>
+   <br>
+   <div class="font-semibold leading-relaxed">
+      Run KAS inside a build container
+   </div>
+   <div>
+```bash
   $ kas-container checkout
   $ kas-container build
-  ```
-
-  </template>
-
-</v-switch>
+```
+   </div>
+</div>
 
 <!--
 -->
