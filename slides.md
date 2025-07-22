@@ -1939,27 +1939,103 @@ Effortless Yocto Integration
 
 ::body::
 
-<div class="flex flex-row items-center justify-evenly text-2xl">
-   <div class="font-semibold max-w-xs leading-relaxed">
-      Yocto meta-flutter
-   </div>
-   <v-clicks class="text-2xl">
-      <ul class="list-disc list-inside space-y-3 max-w-xs">
-         <li>
-            Flutter SDK
-         </li>
-         <li>
-            Flutter Engine
-         </li>
-         <li>
-           Flutter Embedder
-         </li>
-         <li>
-            Flutter App Bundle Recipe
-         </li>
-      </ul>
-   </v-clicks>
-</div>
+<v-switch>
+   <template #0>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-16 max-w-xs leading-relaxed">
+          <div>Flutter SDK</div>
+          <div class="max-w-2xl leading-relaxed">
+            Add to local.conf file:
+
+```
+TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
+```
+
+Then run:
+
+```
+bitbake <image name> -c populate_sdk
+```
+          </div>
+         </div>
+      </div>
+   </template>
+   <template #1>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-16">
+          <div>Flutter Engine</div>
+          <div class="max-w-2xl leading-relaxed">
+The Flutter Engine is a low-level runtime that provides the core functionality for Flutter applications
+          </div>
+         </div>
+      </div>
+   </template>
+      <template #2>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-6">
+          <div>Flutter Embedders</div>
+          <div class="max-w-2xl leading-relaxed  text-lg">
+An embedder is the platform-specific code that integrates the Flutter engine with the device's operating system, graphics stack, input system, and other low-level services.
+          </div>
+          <ul class="list-disc list-inside space-y-2 max-w-xs  text-lg">
+            <li>flutter-pi</li>
+            <li>flutter-wayland-client</li>
+            <li>ivi-homescreen</li>
+          </ul>
+         </div>
+      </div>
+   </template>
+      <template #3>
+      <div class="flex flex-row items-center space-x-24 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-6">
+          <div>Flutter App Recipe</div>
+          <div class="max-w-2xl leading-relaxed  text-lg">
+```{14}
+SRCREV = "${AUTOREV}"
+SRC_URI = " \
+    git://github.com/amarula/ew_2025_flutter_demo.git;branch=main;protocol=https;destsuffix=git \
+    file://ew-2025-flutter-demo \
+    file://ew-2025-flutter-demo.service \
+    "
+
+S = "${WORKDIR}/git"
+
+PUBSPEC_APPNAME = "ew_2025_flutter_demo"
+FLUTTER_APPLICATION_INSTALL_SUFFIX = "ew_2025_flutter_demo"
+FLUTTER_APPLICATION_PATH = ""
+
+inherit flutter-app
+
+inherit systemd
+SYSTEMD_PACKAGES += " ${PN} "
+SYSTEMD_SERVICE:${PN} = "ew-2025-flutter-demo.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
+```
+          </div>
+         </div>
+      </div>
+   </template>
+</v-switch>
 
 <!--
 -->
