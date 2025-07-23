@@ -272,17 +272,20 @@ Back to the roots
 ::body::
 
 <div grid="~ cols-2 gap-4">
-
 <div>
 
-  <div class="text-3xl font-bold mb-4">Embedded World 2025</div>
+  <div class="text-4xl font-bold mt-4 mb-14">Embedded World 2025</div>
 
-  <ul>
+  <ul class="font-bold">
     <li>Embedded Linux build systems</li>
     <li>Graphical frameworks</li>
     <li>FOSS contributions</li>
     <li>Integration and adaption to new hardware</li>
-    <li>ST authorized partner (*)</li>
+    <li>
+      <a href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html" class="text-blue-500 underline">
+        ST authorized partner
+      </a>
+    </li>
     <li>Using upstream-oriented software to support CRA compliance </li>
     <li>Designing a reusable infrastructure</li>
     <li>Showcasing at Engicam booth</li>
@@ -291,18 +294,18 @@ Back to the roots
 </div>
 
 <div>
-<div class="text-3xl font-bold mb-4">Output</div>
-<ul>
+<div class="text-4xl font-bold mt-4 mb-10">Output</div>
+<ul class="font-bold">
   <li>Smart thermostat demo</li>
   <li>Main board
-    <ul>
+    <ul class="font-normal">
       <li>STM32MP257 SOM</li>
       <li>Yocto</li>
       <li>Flutter UI</li>
     </ul>
   </li>
   <li>Sensor board
-    <ul>
+    <ul class="font-normal">
       <li>STM32F429I-DISC1 board</li>
       <li>Temperature, pressure and humidity sensors </li>
       <li>Zephyr RTOS</li>
@@ -312,13 +315,6 @@ Back to the roots
   <li>Boards communication over CAN bus</li>
 </ul>
 </div>
-</div>
-
-<div class="mt-4 text-sm">
-  <span class="text-black no-underline">(*) </span>
-  <a href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html" class="text-blue-500 underline"> 
-    https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html
-  </a>
 </div>
 
 <!--
@@ -332,21 +328,22 @@ Hardware setup - Main board
 
 ::body::
 
-<div class="mt-0">
 <div class="grid grid-cols-[2fr_1.4fr_1.4fr] gap-6 items-start">
   <!-- Column1: 1: List -->
-  <ul class="list-disc ml-4 text-lg">
+  <ul class="font-bold list-disc ml-4 text-lg">
     <li>Engicam EDIMM 2.0 STARTER KIT</li>
     <li> STM32MP257 SOM
-      <li>2 Arm® Cortex®-A35 up to 1.5 GHz</li>
-      <li>1 Cortex®-M33 at 400 MHz</li>
-      <li>H.264 encoding/decoding</li>
-      <li>3D GPU
-        <li>OPENGL ES3.1 </li>
-        <li> Vulkan 1.3 </li>
-        <li> OpenCL 3.0</li>
-      </li>
-      <li>3 CAN</li>
+      <ul class="font-normal list-disc ml-6 space-y-1">
+        <li>2 Cortex®-A35 up to 1.5 GHz</li>
+        <li>1 Cortex®-M33 at 400 MHz</li>
+        <li>H.264 encoding/decoding</li>
+        <li>3D GPU
+          <li>OPENGL ES3.1 </li>
+          <li> Vulkan 1.3 </li>
+          <li> OpenCL 3.0</li>
+        </li>
+        <li>3 CAN</li>
+      </ul>
     </li>
     <li>RAM 2GB</li>
     <li>CAN bus connector</li>
@@ -358,13 +355,6 @@ Hardware setup - Main board
   <!-- Column 3: Image 2 -->
   <img src="./assets/EDIMM2.0-schematic.png" alt="EDIMM 2.0 PNG" class="mt-2 w-full h-100 object-contain" />
 </div>
-</div>
-
-<v-clicks>
-<div class="mt-2 font-bold text-4xl text-red-500 text-center">
-  Zero hardware changes
-</div>
-</v-clicks>
 
 <!--
 -->
@@ -377,12 +367,11 @@ Hardware setup - Sensor board
 
 ::body::
 
-<div class="mt-0">
 <div class="grid grid-cols-[1.8fr_1.2fr_1fr_0.8fr] gap-6 items-start">
   <!-- Column 1: Un-ordered list -->
-  <ul class="list-disc ml-4 text-lg space-y-2">
+  <ul class="font-bold list-disc ml-4 text-lg space-y-2">
     <li>STM32f429I-DISC1 board
-      <ul class="list-disc ml-6 space-y-1">
+      <ul class="font-normal list-disc ml-6 space-y-1">
         <li>Arm® Cortex®‑M4 MCU up to 180 Mhz</li>
         <li>2MB Flash</li>
         <li>8MB SDRAM</li>
@@ -392,7 +381,7 @@ Hardware setup - Sensor board
     </li>
     <li>LPS22HB - pressure</li>
     <li>SHT4x - temperature & humidity</li>
-    <li>SN65HVD230DR - CAN transceiver</li>
+    <li>SN65HVD230 - CAN transceiver</li>
   </ul>
 
   <!-- Column 2: image -->
@@ -415,13 +404,6 @@ Hardware setup - Sensor board
          class="max-h-100 object-contain mt-38" />
   </div>
 </div>
-</div>
-
-<v-clicks>
-<div class="mt-8 font-bold text-4xl text-red-500 text-center">
-  Hardware changes requested
-</div>
-</v-clicks>
 
 <!--
 -->
@@ -434,24 +416,24 @@ Hardware setup - Sensor board
 
 ::body::
 
-<div class="mt-0">
 <div class="grid grid-cols-3 gap-6 items-start">
   <!-- Column 1: Unordered list + image -->
-  <div class="flex flex-col gap-4">
-    <ul class="list-disc ml-4 text-lg space-y-2 mt-2">
-      <li>Sensors wiring to I²C bus</li>
-      <li>CAN bus wiring
-        <ul class="list-disc ml-6 space-y-1">
-          <li>Fix USB OTG conflicts</li>
-          <li>Transceiver</li>
-          <li>Connector</li>
-        </ul>
-      </li>
-    </ul>
-
+  <div class="flex flex-col items-center mt-28 gap-4">
+    <div class="flex flex-col justify-center">
+      <ul class="font-bold list-disc ml-4 text-lg space-y-6 mt-2">
+        <li>Sensors wiring to I²C bus</li>
+        <li>CAN bus wiring
+          <ul class="font-normal list-disc ml-6 space-y-1">
+            <li>Fix USB OTG conflicts</li>
+            <li>Transceiver</li>
+            <li>Connector</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   <!-- Image -->
   <img src="./assets/CAN-fix.jpeg" alt="CAN-fix"
-       class="w-full max-h-100 object-contain mt-12" />
+       class="w-full max-h-100 object-contain mt-8" />
 
   </div>
 
@@ -464,7 +446,6 @@ Hardware setup - Sensor board
     <img src="./assets/sensor-board-back.jpeg" alt="sensor-board-back"
          class="w-full max-h-110 object-contain mt-4" />
   </div>
-</div>
 </div>
 
 <!--
@@ -859,12 +840,6 @@ Zephyr
 
 </div>
 
-<v-clicks>
-  <div class="mt-24 font-bold text-4xl text-red-500 text-center">
-   Perfect to run on the sensor board 
-  </div>
-</v-clicks>
-
 <!--
 -->
 
@@ -941,7 +916,6 @@ Zephyr - Application types
 
 ::body::
 
-<div class="mt-2">
 <div grid="~ cols-2 gap-4">
 
 <div>
@@ -952,7 +926,11 @@ Zephyr - Application types
     Zephyr workspace application
     <ul class="font-normal text-black">
       <li> Avoid unnecessary changes to Zephyr repo</li>
-      <li> Use a reference workspace application (*)</li>
+      <li>
+        <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
+          Use a reference workspace application
+        </a>
+      </li>
     </ul>
   </li>
   <li> Zephyr freestanding application </li>
@@ -1020,15 +998,6 @@ zephyrproject/
 
 </div>
 
-<div class="-mt-1 text-sm">
-  <span class="text-black no-underline">(*) </span>
-  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
-    https://github.com/zephyrproject-rtos/example-application
-  </a>
-</div>
-
-</div>
-
 <!--
 -->
 
@@ -1040,25 +1009,25 @@ Zephyr - CMakeLists.txt
 
 ::body::
 
-<div class="-mt-30">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-16">
   <li>
     find_package()
-    <ul class="font-normal text-black">
+    <ul class="font-normal">
       <li>
         Pull in the Zephyr build system
-	<li> Create a CMake target named app</li>
+	<ul class="font-normal">
+	  <li> Create a CMake target named app</li>
+	</ul>
       </li>
       <li> $ENV{ZEPHYR_BASE} set by west build command</li>
     </ul>
   </li>
   <li>
     target_sources()
-    <ul class="font-normal text-black">
+    <ul class="font-normal">
       <li> Add application sources to the app target</li>
     </ul>
   </li>
@@ -1096,8 +1065,6 @@ target_sources(app
 
 </div>
 
-</div>
-
 <!--
 ts {5|9-20|all}
 -->
@@ -1110,29 +1077,25 @@ Zephyr - app.overlay
 
 ::body::
 
-<div class="-mt-8">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
-  <li> Extend the STM32F429I-DISC1 board </li>
-  <li> Align with hardware changes </li> 
-  <li> Populate the i2c3 bus
-    <ul class="font-normal text-black">
-      <li> Temperature & himudity sensor @ 0x44 </li>
-      <li> Pressure sensor @ 0x5c </li>
-    </ul>
-  </li>
-  <li> Enable CAN controller
-    <ul class="font-normal text-black">
-      <li> Disable USB OTG - pins shared </li>
-      <li> No transceiver description </li>
-    </ul>
-  </li>
+<ul class="font-bold space-y-4">
+<li> Extend the STM32F429I-DISC1 board </li>
+<li> Align with hardware changes </li>
+<li> Populate the i2c3 bus
+<ul class="font-normal">
+<li> Temperature & himudity sensor @ 0x44 </li>
+<li> Pressure sensor @ 0x5c </li>
 </ul>
-
-
+</li>
+<li> Enable CAN controller
+<ul class="font-normal">
+<li> Disable USB OTG - pins shared </li>
+<li> No transceiver description </li>
+</ul>
+</li>
+</ul>
 </div>
 
 <div>
@@ -1170,8 +1133,6 @@ zephyr_udc0: &usbotg_hs {
 
 </div>
 
-</div>
-
 <!--
 -->
 
@@ -1183,14 +1144,10 @@ Zephyr - prj.conf
 
 ::body::
 
-<div class="-mt-38">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<div class="mb-2 font-bold">Setup all the configurations required by the application</div>
-
-<ul>
+<ul class="font-bold space-y-6">
   <li>I2C bus</li>
   <li>Sensor</li>
   <li>CAN bus</li>
@@ -1226,7 +1183,6 @@ CONFIG_LV_...=y
 </div>
 
 </div>
-</div>
 
 <!--
 -->
@@ -1239,12 +1195,10 @@ Zephyr - app/*.c
 
 ::body::
 
-<div class="mt-2">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-3">
   <li> Clear API provided by Zephyr and its module </li>
   <li> Lot of application examples
     <ul class="font-normal text-black">
@@ -1281,7 +1235,6 @@ $ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64
 ```
 
 </div>
-</div>
 
 <!--
 -->
@@ -1294,11 +1247,9 @@ Zephyr - FOSS contribute
 
 ::body::
 
-<div class="mt-0">
 <div grid="~ cols-2 gap-4">
-
-  <div>
-    <ul class="font-bold">
+<div class="flex items-center">
+    <ul class="font-bold space-y-4">
       <li>
         Devicetree
         <ul class="font-normal text-black">
@@ -1308,7 +1259,11 @@ Zephyr - FOSS contribute
 	  <li> CAN2 secondary controller </li>
           <li> Enable CAN1 RCC clock to use CAN2</li>
 	  <li> Need to fix a regression by code re-factoring</li>
-	  <li> Curious about bxCAN controller ? (*)</li>
+	  <li>
+            <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline" target="_blank">
+              Curious about bxCAN controller ?
+	    </a>
+	  </li>
         </ul>
       </li>
       <li>
@@ -1321,7 +1276,7 @@ Zephyr - FOSS contribute
     </ul>
   </div>
 
-<div class="mt-2">
+<div>
 
 ```
 / {
@@ -1344,15 +1299,6 @@ ed48de2583af boards: st: stm32f429i_disc1: doc: re-work flashing section
 3f6978e913ff boards: st: stm32f429i_disc1: doc: support LTDC hardware
 7bca40cceda4 boards: st: stm32f429i_disc1: doc: fix flashing info
 ```
-</div>
-
-</div>
-
-<div class="mt-22 text-sm">
-  <span class="text-black no-underline">(*) </span>
-  <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline"> 
-    https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems
-  </a>
 </div>
 
 </div>
@@ -1395,13 +1341,10 @@ LVGL - Zephyr integration
 
 ::body::
 
-<div class="-mt-12">
-
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-10">
   <li>
     modules/lib/gui/lvgl/
     <ul class="font-normal">
@@ -1458,8 +1401,6 @@ int lvgl_init(void)
 
 </div>
 
-</div>
-
 <!--
 -->
 
@@ -1471,12 +1412,10 @@ LVGL - Display Kconfig
 
 ::body::
 
-<div class="-mt-6">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-24">
 <li> Display subsystem </li>
 <li>
 Display driver
@@ -1527,7 +1466,6 @@ CONFIG_ILI9341=y
 </div>
 
 </div>
-</div>
 
 <!--
 -->
@@ -1540,13 +1478,10 @@ LVGL - Display DTS
 
 ::body::
 
-<div class="mt-2">
-
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-4">
 <li> zephyr,display property </li>
 <li> zephyr,lvgl-pointer-input compatible </li>
 <li>
@@ -1558,9 +1493,7 @@ lvgl_init()
 </ul>
 </li>
 <li> Hardware independent application code </li>
-
 </ul>
-
 </div>
 
 <div>
@@ -1604,8 +1537,6 @@ SMP
 
 </div>
 
-</div>
-
 <!--
 -->
 
@@ -1617,21 +1548,15 @@ LVGL - Library Kconfig
 
 ::body::
 
-<div class="mt-2">
-
 <div grid="~ cols-2 gap-4">
-
 <div>
 
-<ul class="font-bold">
+<ul class="font-bold mt-4 space-y-12">
 <li> Enable LVGL </li>
 <li> Enable only the used widgets </li>
 <li> Fine-tune the application footprint </li>
 </ul>
-
 </div>
-
-<div>
 
 ```
 # app/prj.cof
@@ -1652,16 +1577,6 @@ CONFIG_LV_FONT_MONTSERRAT_32=y
 ```
 </div>
 
-</div>
-
-</div>
-
-<v-clicks>
-  <div class="mt-44 font-bold text-4xl text-red-500 text-center">
-    Ready to use LVGL
-  </div>
-</v-clicks>
-
 <!--
 -->
 
@@ -1673,12 +1588,10 @@ LVGL - Application
 
 ::body::
 
-<div class="mt-0">
 <div grid="~ cols-2 gap-4">
+<div class="flex items-center">
 
-<div>
-
-<ul class="font-bold">
+<ul class="font-bold space-y-4">
 <li>
 In LVGL Everything is an object
 <ul class="font-normal">
@@ -1687,7 +1600,10 @@ In LVGL Everything is an object
 <li> Place on the screen </li>
 </ul>
 </li>
-<li> Start from the basic data flow (*)
+<li>
+  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
+  Start from the basic data flow
+  </a>
 <ul class="list-decimal">
 <li class="text-blue-400"> Driver initialization - Zephyr </li>
 <li class="text-blue-400"> Run lvgl_init() - Zephyr </li>
@@ -1733,15 +1649,6 @@ void main(void) {
      }
 }
 ```
-</div>
-
-</div>
-
-<div class="mt-8 text-sm">
-  <span class="text-black no-underline">(*) </span>
-  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
-    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
-  </a>
 </div>
 
 </div>
@@ -2089,6 +1996,21 @@ Resources
 ::body::
 
 <div class="mt-3 text-xl">
+Flutter
+<div class="ml-3 text-sm">
+  <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500 underline">
+    https://github.com/meta-flutter/meta-flutter
+  </a><br>
+  <a href="https://flutter.dev" class="text-blue-500 underline">
+    https://flutter.dev
+  </a><br>
+  <a href="https://pub.dev" class="text-blue-500 underline">
+    https://pub.dev
+  </a>
+</div>
+</div>
+
+<div class="mt-3 text-xl">
 Hands-on
 <div class="ml-3 text-sm">
   <a href="https://github.com/amarula/ew_2025_flutter_demo" class="text-blue-500 underline">
@@ -2096,6 +2018,12 @@ Hands-on
   </a><br>
   <a href="https://github.com/amarula/ew_2025_lvgl_demo" class="text-blue-500 underline">
     https://github.com/amarula/ew_2025_lvgl_demo
+  </a><br>
+  <a href="https://github.com/amarula/meta-engicam-st" class="text-blue-500 underline">
+    https://github.com/amarula/meta-engicam-st
+  </a><br>
+  <a href="https://github.com/amarula/meta-amarula-demo" class="text-blue-500 underline">
+    https://github.com/amarula/meta-amarula-demo
   </a>
 </div>
 </div>
@@ -2109,51 +2037,20 @@ Hardware
   <a href="https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board" class="text-blue-500 underline">
     https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board
   </a><br>
-  <a href="https://www.st.com/en/evaluation-tools/32f429idiscovery.html" class="text-blue-500 underline"> 
+  <a href="https://www.st.com/en/evaluation-tools/32f429idiscovery.html" class="text-blue-500 underline">
     https://www.st.com/en/evaluation-tools/32f429idiscovery.html
   </a><br>
-  <a href="https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok" class="text-blue-500 underline"> 
+  <a href="https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok" class="text-blue-500 underline">
     https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok
   </a><br>
-  <a href="https://sensirion.com/products/catalog/SENSEVAL-SHT4XV1" class="text-blue-500 underline"> 
+  <a href="https://sensirion.com/products/catalog/SENSEVAL-SHT4XV1" class="text-blue-500 underline">
     https://sensirion.com/products/catalog/SENSEVAL-SHT4XV1
   </a><br>
-    <a href="https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf?ts=1752742041247&ref_url=https%253A%252F%252Fwww.google.com%252F" class="text-blue-500 underline"> 
+    <a href="https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf?ts=1752742041247&ref_url=https%253A%252F%252Fwww.google.com%252F" class="text-blue-500 underline">
     https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf?ts=1752742041247&ref_url=https%253A%252F%252Fwww.google.com%252F
   </a><br>
-    <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline"> 
+    <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline">
     https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems
-  </a>
-</div>
-</div>
-
-<div class="mt-3 text-xl">
-LVGL
-<div class="ml-3 text-sm">
-  <a href="https://docs.lvgl.io/master/index.html" class="text-blue-500 underline"> 
-    https://docs.lvgl.io/master/index.html
-  </a><br>
-  <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline"> 
-    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
-  </a><br>
-  <a href="https://docs.lvgl.io/master/details/integration/os/zephyr.html" class="text-blue-500 underline"> 
-    https://docs.lvgl.io/master/details/integration/os/zephyr.html
-  </a>
-</div>
-
-</div>
-
-<div class="mt-3 text-xl">
-Zephyr
-<div class="ml-3 text-sm">
-  <a href="https://www.zephyrproject.org/" class="text-blue-500 underline"> 
-    https://www.zephyrproject.org/
-  </a><br>
-  <a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html" class="text-blue-500 underline"> 
-    https://docs.zephyrproject.org/latest/develop/getting_started/index.html
-  </a><br>
-  <a href="https://docs.zephyrproject.org/latest/contribute/index.html" class="text-blue-500 underline"> 
-    https://docs.zephyrproject.org/latest/contribute/index.html
   </a>
 </div>
 </div>
@@ -2169,16 +2066,50 @@ Resources
 
 ::body::
 
-<div class="-mt-54 text-xl">
+<div class="mt-3 text-xl">
+LVGL
+<div class="ml-3 text-sm">
+  <a href="https://docs.lvgl.io/master/index.html" class="text-blue-500 underline">
+    https://docs.lvgl.io/master/index.html
+  </a><br>
+  <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline">
+    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+  </a><br>
+  <a href="https://docs.lvgl.io/master/details/integration/os/zephyr.html" class="text-blue-500 underline">
+    https://docs.lvgl.io/master/details/integration/os/zephyr.html
+  </a>
+</div>
+</div>
+
+<div class="mt-3 text-xl">
 Zephyr
 <div class="ml-3 text-sm">
-  <a href="https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html" class="text-blue-500 underline"> 
+  <a href="https://www.zephyrproject.org" class="text-blue-500 underline">
+    https://www.zephyrproject.org
+  </a><br>
+  <a href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html" class="text-blue-500 underline">
+    https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+  </a><br>
+  <a href="https://docs.zephyrproject.org/latest/contribute/index.html" class="text-blue-500 underline">
+    https://docs.zephyrproject.org/latest/contribute/index.html
+  </a><br>
+  <a href="https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html" class="text-blue-500 underline">
     https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html
   </a><br>
-  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline"> 
+  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
     https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
   </a>
 </div>
+</div>
+
+<div class="mt-3 text-xl">
+Yocto
+<div class="ml-3 text-sm">
+  <a href="https://www.yoctoproject.org/" class="text-blue-500 underline">
+    https://www.yoctoproject.org/
+  </a>
+</div>
+
 </div>
 
 <!--
