@@ -181,81 +181,19 @@ Agenda
 
 ::body::
 
- <v-switch>
-   <template #0>
-      <div class="flex flex-row justify-around text-4xl"> Hardware setup </div>
-   </template>
-   <template #1>
-      <div class="flex flex-row justify-around">
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            <ul>
-               <li>Hardware setup</li>
-            </ul>
-         </div>
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            Yocto
-         </div>
-      </div>
-   </template>
-   <template #2>
-      <div class="flex flex-row justify-around">
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            <ul>
-               <li>Hardware setup</li>
-               <li>Yocto</li>
-            </ul>
-         </div>
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            Zephyr
-         </div>
-      </div>
-   </template>
-   <template #3>
-      <div class="flex flex-row justify-around">
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            <ul>
-               <li>Hardware setup</li>
-               <li>Yocto</li>
-               <li>Zephyr</li>
-            </ul>
-         </div>
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            Flutter
-         </div>
-      </div>
-   </template>
-   <template #4>
-      <div class="flex flex-row justify-around">
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            <ul>
-               <li>Hardware setup</li>
-               <li>Yocto</li>
-               <li>Zephyr</li>
-               <li>Flutter</li>
-            </ul>
-         </div>
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            LVGL
-         </div>
-      </div>
-   </template>
-   <template #5>
-      <div class="flex flex-row justify-around">
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            <ul>
-               <li>Hardware setup</li>
-               <li>Yocto</li>
-               <li>Zephyr</li>
-               <li>Flutter</li>
-               <li>LVGL</li>
-            </ul>
-         </div>
-         <div class=" flex flex-col justify-center grid-cols-2 text-4xl">
-            Demo - Q&A
-         </div>
-      </div>
-   </template>
-</v-switch>
+<div class="flex flex-row items-center justify-center gap-x-12 text-4xl">
+      <ul>
+         <li>Hardware setup</li>
+         <li>Yocto</li>
+         <li>Zephyr</li>
+         <li>Flutter</li>
+      </ul>
+      <ul>
+         <li>LVGL</li>
+         <li>Demo</li>
+         <li>Q&A</li>
+      </ul>
+</div>
 
 <!--
 In this presentation will detail the journey of our idea, from its initial concept to its development, including the challenges encountered. We will also provide an overview and comparison of the core components: the hardware setup (boards and sensors), the operating systems (Linux Yocto vs. Zephyr), and the UI frameworks (Flutter vs. LVGL).
