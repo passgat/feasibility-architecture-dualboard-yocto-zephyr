@@ -740,6 +740,281 @@ Yocto - KAS Usage
 
 ::title::
 
+Flutter
+
+::body::
+
+<div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed p-8">
+   <div class="flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-64">
+         <img src="./assets/flutter_logo.svg" class="w-54 h-54 object-contain mx-auto" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Made by Google</div>
+      </div>
+   </div>
+   <div class="grid grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_mobile.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Mobile</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_web.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Web</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_desktop.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Desktop</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+         <img src="./assets/flutter_embedded.jpg" class="w-40 h-40 object-cover" />
+         <div class="p-2 text-center text-sm font-medium text-gray-700">Embedded</div>
+      </div>
+   </div>
+</div>
+
+<!--
+We just seen how LVGL was really suited for our needs and the potential that it offers on MCUs. But what about MPUs?
+
+For those who don’t know Flutter is a UI framework developed by Google and written in the Dart language. It’s extremely popular in the mobile app world.
+
+Now, you might be thinking, 'Flutter? That's for mobile apps.' I’ve heard people say it’s not truly supported on embedded Linux. Today, we're going to bust that myth. Not only is it supported, but it's already shipping in real products from major brands like Toyota.
+-->
+
+---
+
+::title::
+
+Flutter - Power
+
+::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      This framework's developer experience and power are top-notch.
+   </div>
+      <ul class="list-disc list-inside space-y-3 max-w-xs text-xl">
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Easy to learn and use
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Hot Reload
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Null safety and async/await support
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Natively compiled for great performance
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Cross-platform with consistent UI
+         </li>
+         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
+            Excellent tooling for development and debugging
+         </li>
+      </ul>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Flutter - Ecosystem
+
+::body::
+
+<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
+  <div class="flex flex-col items-center justify-center space-y-4">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
+      <img src="./assets/opensource_logo.png" class="w-54 h-54 object-contain mx-auto" />
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
+      <img src="./assets/flutter_pubdev_logo.png" class="w-54 h-54 object-contain mx-auto" />
+    </div>
+  </div>
+    <ul class="list-disc list-inside space-y-3 max-w-xs text-2xl">
+      <li>
+        <a href="https://pub.dev/packages/get" class="text-blue-500 underline">
+          get
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/fl_chart" class="text-blue-500 underline">
+          fl_chart
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/google_fonts" class="text-blue-500 underline">
+          google_fonts
+        </a>
+      </li>
+      <li>
+        <a href="https://pub.dev/packages/animations" class="text-blue-500 underline">
+          animations
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/amarula/flutekeyboard" class="text-blue-500 underline">
+          flutekeyboard
+        </a>
+      </li>
+    </ul>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Flutter - C++
+
+::body::
+
+<div class="flex flex-row items-center justify-evenly text-2xl">
+   <div class="font-semibold max-w-xs leading-relaxed">
+      Flutter apps can use the FFI library to call native C APIs, and to read, write, allocate, and deallocate native memory.
+   </div>
+   <div class="flex flex-col space-y-16">
+      <div>
+```cpp
+static double k_temperature = 1;
+
+EXPORT double get_temperature() { return k_temperature; }
+```
+            </div>
+            <div>
+```dart
+final lib = DynamicLibrary.open(libraryPath);
+
+final getTemperature = lib
+    .lookup<NativeFunction<DoubleFuncCpp>>('get_temperature')
+    .asFunction<DoubleFunc>();
+
+double _temperature = getTemperature();
+```
+      </div>
+   </div>
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
+Flutter - Yocto
+
+::body::
+
+<v-switch>
+   <template #0>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-16 max-w-xs leading-relaxed">
+          <div>Flutter SDK</div>
+          <div class="max-w-2xl leading-relaxed">
+            Add to local.conf file:
+
+```
+TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
+```
+
+Then run:
+
+```
+bitbake <image name> -c populate_sdk
+```
+          </div>
+         </div>
+      </div>
+   </template>
+   <template #1>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-16">
+          <div>Flutter Engine</div>
+          <div class="max-w-2xl leading-relaxed">
+The Flutter Engine is a low-level runtime that provides the core functionality for Flutter applications
+          </div>
+         </div>
+      </div>
+   </template>
+      <template #2>
+      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-6">
+          <div>Flutter Embedders</div>
+          <div class="max-w-2xl leading-relaxed  text-lg">
+An embedder is the platform-specific code that integrates the Flutter engine with the device's operating system, graphics stack, input system, and other low-level services.
+          </div>
+          <ul class="list-disc list-inside space-y-2 max-w-xs  text-lg">
+            <li>flutter-pi</li>
+            <li>flutter-wayland-client</li>
+            <li>ivi-homescreen</li>
+          </ul>
+         </div>
+      </div>
+   </template>
+      <template #3>
+      <div class="flex flex-row items-center space-x-24 justify-evenly text-2xl">
+         <div class="font-semibold max-w-xs leading-relaxed">
+            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
+      meta-flutter
+    </a>
+         </div>
+         <div class="flex flex-col items-center space-y-6">
+          <div>Flutter App Recipe</div>
+          <div class="max-w-2xl leading-relaxed  text-lg">
+```{14}
+SRCREV = "${AUTOREV}"
+SRC_URI = " \
+    git://github.com/amarula/ew_2025_flutter_demo.git;branch=main;protocol=https;destsuffix=git \
+    file://ew-2025-flutter-demo \
+    file://ew-2025-flutter-demo.service \
+    "
+
+S = "${WORKDIR}/git"
+
+PUBSPEC_APPNAME = "ew_2025_flutter_demo"
+FLUTTER_APPLICATION_INSTALL_SUFFIX = "ew_2025_flutter_demo"
+FLUTTER_APPLICATION_PATH = ""
+
+inherit flutter-app
+
+inherit systemd
+SYSTEMD_PACKAGES += " ${PN} "
+SYSTEMD_SERVICE:${PN} = "ew-2025-flutter-demo.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable"
+```
+          </div>
+         </div>
+      </div>
+   </template>
+</v-switch>
+
+<!--
+-->
+
+---
+
+::title::
+
 Zephyr
 
 ::body::
@@ -1246,281 +1521,6 @@ ed48de2583af boards: st: stm32f429i_disc1: doc: re-work flashing section
 </div>
 
 </div>
-
-<!--
--->
-
----
-
-::title::
-
-Flutter
-
-::body::
-
-<div class="flex flex-row justify-evenly w-full text-3xl font-semibold leading-relaxed p-8">
-   <div class="flex items-center justify-center">
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-64">
-         <img src="./assets/flutter_logo.svg" class="w-54 h-54 object-contain mx-auto" />
-         <div class="p-2 text-center text-sm font-medium text-gray-700">Made by Google</div>
-      </div>
-   </div>
-   <div class="grid grid-cols-2 gap-6">
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-         <img src="./assets/flutter_mobile.jpg" class="w-40 h-40 object-cover" />
-         <div class="p-2 text-center text-sm font-medium text-gray-700">Mobile</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-         <img src="./assets/flutter_web.jpg" class="w-40 h-40 object-cover" />
-         <div class="p-2 text-center text-sm font-medium text-gray-700">Web</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-         <img src="./assets/flutter_desktop.jpg" class="w-40 h-40 object-cover" />
-         <div class="p-2 text-center text-sm font-medium text-gray-700">Desktop</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-         <img src="./assets/flutter_embedded.jpg" class="w-40 h-40 object-cover" />
-         <div class="p-2 text-center text-sm font-medium text-gray-700">Embedded</div>
-      </div>
-   </div>
-</div>
-
-<!--
-We just seen how LVGL was really suited for our needs and the potential that it offers on MCUs. But what about MPUs?
-
-For those who don’t know Flutter is a UI framework developed by Google and written in the Dart language. It’s extremely popular in the mobile app world.
-
-Now, you might be thinking, 'Flutter? That's for mobile apps.' I’ve heard people say it’s not truly supported on embedded Linux. Today, we're going to bust that myth. Not only is it supported, but it's already shipping in real products from major brands like Toyota.
--->
-
----
-
-::title::
-
-Flutter - Power
-
-::body::
-
-<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
-   <div class="font-semibold max-w-xs leading-relaxed">
-      This framework's developer experience and power are top-notch.
-   </div>
-      <ul class="list-disc list-inside space-y-3 max-w-xs text-xl">
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Easy to learn and use
-         </li>
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Hot Reload
-         </li>
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Null safety and async/await support
-         </li>
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Natively compiled for great performance
-         </li>
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Cross-platform with consistent UI
-         </li>
-         <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Excellent tooling for development and debugging
-         </li>
-      </ul>
-</div>
-
-<!--
--->
-
----
-
-::title::
-
-Flutter - Ecosystem
-
-::body::
-
-<div class="flex flex-row items-center justify-center space-x-24 text-2xl">
-  <div class="flex flex-col items-center justify-center space-y-4">
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
-      <img src="./assets/opensource_logo.png" class="w-54 h-54 object-contain mx-auto" />
-    </div>
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow w-54">
-      <img src="./assets/flutter_pubdev_logo.png" class="w-54 h-54 object-contain mx-auto" />
-    </div>
-  </div>
-    <ul class="list-disc list-inside space-y-3 max-w-xs text-2xl">
-      <li>
-        <a href="https://pub.dev/packages/get" class="text-blue-500 underline">
-          get
-        </a>
-      </li>
-      <li>
-        <a href="https://pub.dev/packages/fl_chart" class="text-blue-500 underline">
-          fl_chart
-        </a>
-      </li>
-      <li>
-        <a href="https://pub.dev/packages/google_fonts" class="text-blue-500 underline">
-          google_fonts
-        </a>
-      </li>
-      <li>
-        <a href="https://pub.dev/packages/animations" class="text-blue-500 underline">
-          animations
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/amarula/flutekeyboard" class="text-blue-500 underline">
-          flutekeyboard
-        </a>
-      </li>
-    </ul>
-</div>
-
-<!--
--->
-
----
-
-::title::
-
-Flutter - C++
-
-::body::
-
-<div class="flex flex-row items-center justify-evenly text-2xl">
-   <div class="font-semibold max-w-xs leading-relaxed">
-      Flutter apps can use the FFI library to call native C APIs, and to read, write, allocate, and deallocate native memory.
-   </div>
-   <div class="flex flex-col space-y-16">
-      <div>
-```cpp
-static double k_temperature = 1;
-
-EXPORT double get_temperature() { return k_temperature; }
-```
-            </div>
-            <div>
-```dart
-final lib = DynamicLibrary.open(libraryPath);
-
-final getTemperature = lib
-    .lookup<NativeFunction<DoubleFuncCpp>>('get_temperature')
-    .asFunction<DoubleFunc>();
-
-double _temperature = getTemperature();
-```
-      </div>
-   </div>
-</div>
-
-<!--
--->
-
----
-
-::title::
-
-Flutter - Yocto
-
-::body::
-
-<v-switch>
-   <template #0>
-      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
-         <div class="font-semibold max-w-xs leading-relaxed">
-            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
-      meta-flutter
-    </a>
-         </div>
-         <div class="flex flex-col items-center space-y-16 max-w-xs leading-relaxed">
-          <div>Flutter SDK</div>
-          <div class="max-w-2xl leading-relaxed">
-            Add to local.conf file:
-
-```
-TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
-```
-
-Then run:
-
-```
-bitbake <image name> -c populate_sdk
-```
-          </div>
-         </div>
-      </div>
-   </template>
-   <template #1>
-      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
-         <div class="font-semibold max-w-xs leading-relaxed">
-            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
-      meta-flutter
-    </a>
-         </div>
-         <div class="flex flex-col items-center space-y-16">
-          <div>Flutter Engine</div>
-          <div class="max-w-2xl leading-relaxed">
-The Flutter Engine is a low-level runtime that provides the core functionality for Flutter applications
-          </div>
-         </div>
-      </div>
-   </template>
-      <template #2>
-      <div class="flex flex-row items-center space-x-6 justify-evenly text-2xl">
-         <div class="font-semibold max-w-xs leading-relaxed">
-            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
-      meta-flutter
-    </a>
-         </div>
-         <div class="flex flex-col items-center space-y-6">
-          <div>Flutter Embedders</div>
-          <div class="max-w-2xl leading-relaxed  text-lg">
-An embedder is the platform-specific code that integrates the Flutter engine with the device's operating system, graphics stack, input system, and other low-level services.
-          </div>
-          <ul class="list-disc list-inside space-y-2 max-w-xs  text-lg">
-            <li>flutter-pi</li>
-            <li>flutter-wayland-client</li>
-            <li>ivi-homescreen</li>
-          </ul>
-         </div>
-      </div>
-   </template>
-      <template #3>
-      <div class="flex flex-row items-center space-x-24 justify-evenly text-2xl">
-         <div class="font-semibold max-w-xs leading-relaxed">
-            Yocto     <a href="https://github.com/meta-flutter/meta-flutter" class="text-blue-500">
-      meta-flutter
-    </a>
-         </div>
-         <div class="flex flex-col items-center space-y-6">
-          <div>Flutter App Recipe</div>
-          <div class="max-w-2xl leading-relaxed  text-lg">
-```{14}
-SRCREV = "${AUTOREV}"
-SRC_URI = " \
-    git://github.com/amarula/ew_2025_flutter_demo.git;branch=main;protocol=https;destsuffix=git \
-    file://ew-2025-flutter-demo \
-    file://ew-2025-flutter-demo.service \
-    "
-
-S = "${WORKDIR}/git"
-
-PUBSPEC_APPNAME = "ew_2025_flutter_demo"
-FLUTTER_APPLICATION_INSTALL_SUFFIX = "ew_2025_flutter_demo"
-FLUTTER_APPLICATION_PATH = ""
-
-inherit flutter-app
-
-inherit systemd
-SYSTEMD_PACKAGES += " ${PN} "
-SYSTEMD_SERVICE:${PN} = "ew-2025-flutter-demo.service"
-SYSTEMD_AUTO_ENABLE:${PN} = "enable"
-```
-          </div>
-         </div>
-      </div>
-   </template>
-</v-switch>
 
 <!--
 -->
