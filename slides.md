@@ -181,18 +181,22 @@ Agenda
 
 ::body::
 
-<div class="flex flex-row items-center justify-center gap-x-12 text-4xl">
-      <ul>
-         <li>Hardware setup</li>
-         <li>Yocto</li>
-         <li>Zephyr</li>
-         <li>Flutter</li>
-      </ul>
-      <ul>
-         <li>LVGL</li>
-         <li>Demo</li>
-         <li>Q&A</li>
-      </ul>
+<div class="flex justify-center gap-x-32 text-4xl -ml-32">
+  <div class="flex flex-col justify-start">
+    <ul class="list-disc pl-5">
+      <li>Hardware setup</li>
+      <li>Yocto</li>
+      <li>Flutter</li>
+      <li>Zephyr</li>
+    </ul>
+  </div>
+  <div class="flex flex-col justify-start">
+    <ul class="list-disc pl-5">
+      <li>LVGL</li>
+      <li>Demo</li>
+      <li>Q&amp;A</li>
+    </ul>
+  </div>
 </div>
 
 <!--
