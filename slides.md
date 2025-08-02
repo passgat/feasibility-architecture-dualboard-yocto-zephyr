@@ -213,50 +213,52 @@ Back to the roots
 
 ::body::
 
-<div grid="~ cols-2 gap-4">
-<div>
-
-  <div class="text-4xl font-bold mt-4 mb-14">Embedded World 2025</div>
-
-  <ul class="font-bold">
-    <li>Embedded Linux build systems</li>
-    <li>Graphical frameworks</li>
-    <li>FOSS contributions</li>
-    <li>Integration and adaption to new hardware</li>
-    <li>
-      <a href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html" class="text-blue-500 underline">
+<div class="grid grid-cols-2 gap-4 items-start">
+  <div>
+    <div class="text-4xl font-bold mt-4 mb-6">Embedded World 2025</div>
+    <ul class="font-bold list-disc pl-5 space-y-2">
+      <li>Embedded Linux build systems</li>
+      <li>Graphical frameworks</li>
+      <li>FOSS contributions</li>
+      <li>Integration and adaption to new hardware</li>
+      <li>
         ST authorized partner
-      </a>
-    </li>
-    <li>Using upstream-oriented software to support CRA compliance </li>
-    <li>Designing a reusable infrastructure</li>
-    <li>Showcasing at Engicam booth</li>
-  </ul>
-
-</div>
-
-<div>
-<div class="text-4xl font-bold mt-4 mb-10">Output</div>
-<ul class="font-bold">
-  <li>Smart thermostat demo</li>
-  <li>Main board
-    <ul class="font-normal">
-      <li>STM32MP257 SOM</li>
-      <li>Yocto</li>
-      <li>Flutter UI</li>
+        <a
+          href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html"
+          class="text-blue-500 underline"
+          target="_blank" rel="noopener noreferrer"
+        >
+          program
+        </a>
+      </li>
+      <li>Using upstream-oriented software to support CRA compliance</li>
+      <li>Designing a reusable infrastructure</li>
+      <li>Showcasing at Engicam booth</li>
     </ul>
-  </li>
-  <li>Sensor board
-    <ul class="font-normal">
-      <li>STM32F429I-DISC1 board</li>
-      <li>Temperature, pressure and humidity sensors </li>
-      <li>Zephyr RTOS</li>
-      <li>LVGL UI</li>
+  </div>
+
+  <div>
+    <div class="text-4xl font-bold mt-4 mb-6">Output</div>
+    <ul class="font-bold list-disc pl-5 space-y-2">
+      <li>Smart thermostat demo</li>
+      <li>Main board
+        <ul class="font-normal list-disc pl-5">
+          <li>STM32MP257 SOM</li>
+          <li>Yocto</li>
+          <li>Flutter UI</li>
+        </ul>
+      </li>
+      <li>Sensor board
+        <ul class="font-normal list-disc pl-5">
+          <li>STM32F429I-DISC1 board</li>
+          <li>Temperature, pressure and humidity sensors</li>
+          <li>Zephyr RTOS</li>
+          <li>LVGL UI</li>
+        </ul>
+      </li>
+      <li>Boards communication over CAN bus</li>
     </ul>
-  </li>
-  <li>Boards communication over CAN bus</li>
-</ul>
-</div>
+  </div>
 </div>
 
 <!--
