@@ -867,9 +867,11 @@ Zephyr - Application types
     <ul class="font-normal text-black">
       <li> Avoid unnecessary changes to Zephyr repo</li>
       <li>
+        Use a
         <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
-          Use a reference workspace application
+          reference
         </a>
+        workspace application
       </li>
     </ul>
   </li>
