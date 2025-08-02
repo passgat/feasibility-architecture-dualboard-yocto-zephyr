@@ -1200,9 +1200,11 @@ Zephyr - FOSS contribute
           <li> Enable CAN1 RCC clock to use CAN2</li>
 	  <li> Need to fix a regression by code re-factoring</li>
 	  <li>
+	    bxCAN internals? Don’t miss Amarula's
             <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline" target="_blank">
-              Curious about bxCAN controller ?
+              talk
 	    </a>
+	    at FOSDEM 2024
 	  </li>
         </ul>
       </li>
