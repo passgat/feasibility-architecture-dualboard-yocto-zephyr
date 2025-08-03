@@ -1021,36 +1021,30 @@ Zephyr
 
 <div class="mt-0 flex space-x-24 w-full">
 
-  <!-- left column -->
-  <ul class="flex-1 list-disc list-inside space-y-0 text-xl">
-    <li class="font-semibold">Open source RTOS</li>
-    <li class="font-semibold">Low memory footprint</li>
-    <li class="font-semibold">High portability - 500+ boards</li>
-    <li class="font-semibold">Secure and safe</li>
-    <li class="font-semibold">LTS support</li>
-      <li class="font-semibold">
-        Linux like
-        <ul class="list-disc ml-4 font-normal space-y-1">
-          <li>Kconfig</li>
-          <li>Devicetree</li>
-        </ul>
-      </li>
-  </ul>
+  <!-- left column: logo -->
+  <div class="flex-1 flex items-center justify-center">
+    <img
+      src="./assets/zephyr_project_r_horizontal_colored_positive_big-1.svg"
+      alt="Zephyr Logo"
+      class="h-32"
+    />
+  </div>
 
-  <!-- Right column -->
-  <ul class="flex-1 list-disc list-inside space-y-1 text-xl">
-      <li class="font-semibold">
-        Ecosystem - not only the kernel
-        <ul class="list-disc ml-4 font-normal space-y-1">
-          <li>Developing tools - west</li>
-          <li>Device drivers</li>
-	  <li>Connectivity</li>
-          <li>Logging</li>
-          <li>Tracing</li>
-	  <li>Power management</li>
-          <li>Much more</li>
-        </ul>
-      </li>
+  <ul class="flex-1 list-disc list-inside space-y-1 text-xl font-semibold">
+    <li> Open source RTOS </li>
+    <li> Low memory footprint </li>
+    <li> High portability - 500+ boards </li>
+    <li> LTS support </li>
+    <li> Linux like - Kconfig & Devicetree </li>
+    <li>
+      Ecosystem - not only the kernel
+      <ul class="list-disc ml-6 font-normal space-y-1">
+        <li>Developing tools - west</li>
+        <li>Device drivers</li>
+        <li>Connectivity</li>
+        <li>Much more</li>
+      </ul>
+    </li>
   </ul>
 
 </div>
