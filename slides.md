@@ -1826,7 +1826,7 @@ In LVGL Everything is an object
 </ul>
 </li>
 <li>
-  <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
+  <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline">
   Start from the basic data flow
   </a>
 <ul class="list-decimal">
