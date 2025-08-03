@@ -1416,6 +1416,8 @@ Zephyr - app/*.c
       <li> samples/drivers/display </li>
       <li> samples/subsys/display/lvgl </li>
       <li> samples/net/sockets/can </li>
+      <li> samples/sensor/lps22hb </li>
+      <li> samples/sensor/sht4x </li>
     </ul>
   </li>
 </ul>
