@@ -1966,8 +1966,14 @@ Hardware
   <a href="https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board" class="text-blue-500 underline">
     https://www.engicam.com/vis-prod/101366/EDIMM-2-0-STARTER-KIT-EDIMM-2-0-Form-Factor-Capacitive-Evaluation-Board
   </a><br>
+  <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32f429-439.html" class="text-blue-500 underline">
+    https://www.st.com/en/microcontrollers-microprocessors/stm32f429-439.html
+  </a><br>
   <a href="https://www.st.com/en/evaluation-tools/32f429idiscovery.html" class="text-blue-500 underline">
     https://www.st.com/en/evaluation-tools/32f429idiscovery.html
+  </a><br>
+  <a href="https://community.st.com/ysqtg83639/attachments/ysqtg83639/mcu-touch-gfx-gui-forum/1401/1/FRIDA_LCD_FRD240C48003-B.pdf" class="text-blue-500 underline">
+    https://community.st.com/ysqtg83639/attachments/ysqtg83639/mcu-touch-gfx-gui-forum/1401/1/FRIDA_LCD_FRD240C48003-B.pdf
   </a><br>
   <a href="https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok" class="text-blue-500 underline">
     https://www.mikroe.com/lps22hb-click?srsltid=AfmBOoqLNTD-FiAuQrsgVKIiQ03Lkr36fZFyAKXXYfBffaFiuQxTN0Ok
@@ -2006,6 +2012,24 @@ LVGL
   </a><br>
   <a href="https://docs.lvgl.io/master/details/integration/os/zephyr.html" class="text-blue-500 underline">
     https://docs.lvgl.io/master/details/integration/os/zephyr.html
+  </a><br>
+  <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline">
+    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+  </a><br>
+  <a href="https://www.youtube.com/watch?v=fRB9gn77XhE" class="text-blue-500 underline">
+    https://www.youtube.com/watch?v=fRB9gn77XhE
+  </a><br>
+  <a href="https://www.youtube.com/watch?v=Kfgln6RdoYc" class="text-blue-500 underline">
+    https://www.youtube.com/watch?v=Kfgln6RdoYc
+  </a>
+</div>
+</div>
+
+<div class="mt-3 text-xl">
+Slides
+<div class="ml-3 text-sm">
+  <a href="https://github.com/amarula/feasibility-architecture-dualboard-yocto-zephyr/" class="text-blue-500 underline">
+    https://github.com/amarula/feasibility-architecture-dualboard-yocto-zephyr
   </a>
 </div>
 </div>
@@ -2026,7 +2050,7 @@ Zephyr
     https://docs.zephyrproject.org/latest/boards/st/stm32f429i_disc1/doc/index.html
   </a><br>
   <a href="https://github.com/zephyrproject-rtos/example-application" class="text-blue-500 underline">
-    https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html
+    https://github.com/zephyrproject-rtos/example-application
   </a>
 </div>
 </div>
@@ -2036,9 +2060,14 @@ Yocto
 <div class="ml-3 text-sm">
   <a href="https://www.yoctoproject.org/" class="text-blue-500 underline">
     https://www.yoctoproject.org/
+  </a><br>
+  <a href="https://layers.openembedded.org/layerindex/branch/master/layers" class="text-blue-500 underline">
+    https://layers.openembedded.org/layerindex/branch/master/layers
+  </a><br>
+  <a href="https://github.com/engicam-stable/meta-engicam-st" class="text-blue-500 underline">
+    https://github.com/engicam-stable/meta-engicam-st
   </a>
 </div>
-
 </div>
 
 <!--
