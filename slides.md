@@ -1826,8 +1826,9 @@ In LVGL Everything is an object
 </ul>
 </li>
 <li>
+  Start from the
   <a href="https://docs.lvgl.io/master/intro/getting_started/learn_the_basics.html" class="text-blue-500 underline">
-  Start from the basic data flow
+    basic data flow
   </a>
 <ul class="list-decimal">
 <li class="text-blue-400"> Driver initialization - Zephyr </li>
