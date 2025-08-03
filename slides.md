@@ -1533,8 +1533,14 @@ LVGL
 
 ::body::
 
+
 <div class="flex flex-row items-center justify-center space-x-24 text-2xl">
    <div class="font-semibold max-w-xs leading-relaxed">
+      <img
+          src="./assets/LVGL-new-logo.webp"
+          alt="LVGL logo"
+          class="h-16 relative -left-2 -top-2"
+      />
       Light and Versatile Graphics Library
    </div>
    <div>
