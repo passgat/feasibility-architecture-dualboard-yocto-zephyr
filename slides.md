@@ -1358,12 +1358,20 @@ Zephyr - prj.conf
 <div grid="~ cols-2 gap-4">
 <div class="flex items-center">
 
-<ul class="font-bold space-y-6">
+<ul class="font-bold space-y-2">
   <li>I2C bus</li>
   <li>Sensor</li>
   <li>CAN bus</li>
   <li>LED</li>
   <li>Graphical library</li>
+  <li class="text-red-600">What about the drivers?
+  <ul class="font-normal">
+    <li>CAN_STM32_BXCAN </li>
+    <li>LPS22HB</li>
+    <li>SHT4X</li>
+    <li>ILI9341</li>
+  </ul>
+  </li>
 </ul>
 
 </div>
