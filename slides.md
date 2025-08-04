@@ -244,7 +244,7 @@ Back to the roots
       <li>Main board
         <ul class="font-normal list-disc pl-5">
           <li>STM32MP257 SOM</li>
-          <li>Yocto</li>
+          <li>Yocto - scarthgap</li>
           <li>Flutter UI</li>
         </ul>
       </li>
@@ -252,8 +252,8 @@ Back to the roots
         <ul class="font-normal list-disc pl-5">
           <li>STM32F429I-DISC1 board</li>
           <li>Temperature, pressure and humidity sensors</li>
-          <li>Zephyr RTOS</li>
-          <li>LVGL UI</li>
+          <li>Zephyr RTOS - 4.0.0</li>
+          <li>LVGL UI - 8.4.0</li>
         </ul>
       </li>
       <li>Boards communication over CAN bus</li>
