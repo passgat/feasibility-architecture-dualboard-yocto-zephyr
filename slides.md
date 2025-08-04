@@ -245,7 +245,7 @@ Back to the roots
         <ul class="font-normal list-disc pl-5">
           <li>STM32MP257 SOM</li>
           <li>Yocto - scarthgap</li>
-          <li>Flutter UI</li>
+          <li>Flutter - 3.32.2</li>
         </ul>
       </li>
       <li>Sensor board
