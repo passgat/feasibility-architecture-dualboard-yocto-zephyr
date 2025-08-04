@@ -403,16 +403,20 @@ Yocto
 
 ::body::
 
-<div class="flex flex-row items-center justify-center space-x-24 text-3xl">
-   <div class="font-semibold max-w-xs leading-relaxed">
-      Flexible, scalable and <span class="text-indigo-600 font-bold">reproducible</span>...
-   </div>
-    <ul class="list-disc list-inside space-y-3 max-w-xs">
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Customizable</li>
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Reproducible</li>
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Package-based</li>
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Toolchain control</li>
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Community-driven</li>
+<div class="flex flex-row items-center justify-center space-x-24 ">
+    <img
+      src="./assets/yocto_logo.svg"
+      alt="Yocto Logo"
+      class="h-54"
+    >
+    <ul class="list-disc list-inside space-y-3 max-w-xs text-2xl">
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Flexible</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Scalable</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Customizable</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Reproducible</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Package-based</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Toolchain control</li>
+      <li class="hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Community-driven</li>
     </ul>
 </div>
 
