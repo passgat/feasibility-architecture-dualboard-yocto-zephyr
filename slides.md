@@ -1860,6 +1860,162 @@ void main(void) {
 
 ::title::
 
+LVGL - Memory footprint
+
+::body::
+
+<div style="font-family: monospace; margin-top: 1em;">
+  <table style="border-collapse: collapse; width: 100%; font-family: inherit;">
+    <thead>
+      <tr>
+        <th style="text-align: right; padding: 4px 8px; border-bottom: 1px solid #ccc;">#</th>
+        <th style="text-align: left; padding: 4px 8px; border-bottom: 1px solid #ccc; min-width: 180px;"><strong>Applications</strong></th>
+        <th style="text-align: right; padding: 4px 8px; border-bottom: 1px solid #ccc; min-width: 140px;"><strong>FLASH (2 MB)</strong></th>
+        <th style="text-align: right; padding: 4px 8px; border-bottom: 1px solid #ccc; min-width: 140px;"><strong>RAM (192 KB)</strong></th>
+        <th style="text-align: right; padding: 4px 8px; border-bottom: 1px solid #ccc; min-width: 140px;"><strong>SDRAM2 (8 MB)</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: right; padding: 4px 8px;">1</td>
+        <td style="padding: 4px 8px;"><span style="color: #007BFF; font-weight: bold">samples/hello_world</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">16 KB ( 1%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">5 KB ( 2%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">0 KB ( 0%)</span></td>
+      </tr>
+      <tr>
+        <td style="text-align: right; padding: 4px 8px;">2</td>
+        <td style="padding: 4px 8px;"><span style="font-weight: bold">ew_demo (-DENABLE_GUI=OFF)</span></td>
+        <td style="text-align: right; padding: 4px 8px;">36 KB ( 2%)</td>
+        <td style="text-align: right; padding: 4px 8px;">9 KB ( 4%)</td>
+        <td style="text-align: right; padding: 4px 8px;">0 KB ( 0%)</td>
+      </tr>
+      <tr>
+        <td style="text-align: right; padding: 4px 8px;">3</td>
+        <td style="padding: 4px 8px;"><span style="color: #007BFF; font-weight: bold">samples/drivers/display</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">46 KB ( 2%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">26 KB (14%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">150 KB ( 2%)</span></td>
+      </tr>
+      <tr>
+        <td style="text-align: right; padding: 4px 8px;">4</td>
+        <td style="padding: 4px 8px;"><span style="color: #007BFF; font-weight: bold">samples/subsys/display/lvgl</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #FD7E14; font-weight: bold">251 KB (12%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #FD7E14; font-weight: bold">65 KB (33%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">150 KB ( 2%)</span></td>
+      </tr>
+      <tr>
+        <td style="text-align: right; padding: 4px 8px;">5</td>
+        <td style="padding: 4px 8px;"><span style="font-weight: bold">ew_demo</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #DC3545; font-weight: bold">418 KB (20%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #FD7E14; font-weight: bold">63 KB (32%)</span></td>
+        <td style="text-align: right; padding: 4px 8px;"><span style="color: #28A745; font-weight: bold">150 KB ( 2%)</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ul style="margin-top: 2em;">
+  <li>With GUI enabled: +380 KB FLASH, +54 KB RAM (5 vs 2)</li>
+  <li>150KB SDRAM2 used for framebuffer (3, 4, 5)</li>
+  <li>Contained memory footprint, allowing for application extension (5)
+    <ul>
+      <li>&lt; 20% of FLASH</li>
+      <li>~33% of RAM</li>
+    </ul>
+  </li>
+  <li>Well suited for mid-range MCUs like the STM32F429</li>
+</ul>
+
+<!--
+-->
+
+---
+
+::title::
+
+LVGL - Runtime memory profile
+
+::body::
+
+<div grid="~ cols-2 gap-4">
+<div class="flex items-center">
+
+<ul class="font-bold space-y-2">
+  <li> Zephyr shell - CONFIG_SHELL
+
+  </li>
+  <li>
+    LVGL stats commands
+    <ul class="font-normal">
+      <li> Enabled by CONFIG_LV_Z_SHELL </li>
+      <li> <em style="color: #007BFF;">lvgl stats memory </em></li>
+    </ul>
+  </li>
+  <li>
+    LVGL monkey commands
+    <ul class="font-normal">
+      <li> Enabled by CONFIG_LV_USE_MONKEY </li>
+      <li> <em style="color: #007BFF;">lvgl monkey create {pointer|keypad|button|encoder} </em></li>
+      <li> <em style="color: #007BFF;">lvgl monkey set &lt;index&gt; {inactive|active} </em></li>
+    </ul>
+  </li>
+  <li>
+    Useful for
+    <ul class="font-normal">
+      <li> Tuning memory setup </li>
+      <li> Identify memory leaks </li>
+      <li> Test the UI </li>
+    </ul>
+  </li>
+
+</ul>
+
+</div>
+
+<div>
+
+```
+# app/prj.conf
+
+CONFIG_SHELL=y
+CONFIG_LV_Z_SHELL=y
+
+CONFIG_LV_USE_MONKEY=y
+```
+
+```
+# create a monkey for the touchscreen
+uart:~$ lvgl monkey create pointer
+id   device    active
+0    pointer   yes
+
+# get memory statistics
+uart:~$ lvgl stats memory
+Heap at 0x20001838 contains 2047 units in 11 buckets
+
+  bucket#    min units        total      largest      largest
+             threshold       chunks      (units)      (bytes)
+  -----------------------------------------------------------
+        0            1            5            1            4
+        3            8            1            9           68
+        4           16            1           25          196
+        6           64            1           95          756
+        9          512            1          554         4428
+
+5468 free bytes, 9692 allocated bytes, overhead = 1220 bytes (7.4%)
+```
+</div>
+
+</div>
+
+<!--
+-->
+
+---
+
+::title::
+
 Demo
 
 ::body::
