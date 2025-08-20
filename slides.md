@@ -1648,16 +1648,21 @@ CONFIG_DISPLAY=y
 ```
 
 ```
+# drivers/display/Kconfig
+
+if DISPLAY
+source "drivers/display/Kconfig.ili9xxx"
+endif # DISPLAY
+```
+
+```
 # drivers/display/Kconfig.ili9xxx
 
 config ILI9341
 	bool "ILI9341 display driver"
 	default y
 	depends on DT_HAS_ILITEK_ILI9341_ENABLED
-	select MIPI_DBI
-	select ILI9XXX
-	help
-	  Enable driver for ILI9341 display driver.
+	...
 ```
 
 ```
