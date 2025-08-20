@@ -1079,6 +1079,18 @@ Zephyr - Application
     └── *.c
 ```
 
+<div class="text-center">
+  <img src="./assets/cmake-ar21.svg" alt="cmake-logo" class="h-36 w-auto -mt-4">
+</div>
+
+<div class="text-center">
+  <img src="./assets/devicetree-logo.svg" alt="devicetree-logo" class="h-24 w-auto -mt-2">
+</div>
+
+<div class="text-center">
+  <img src="./assets/kconfig.jpeg" alt="kconfig-logo" class="h-22 w-auto rounded shadow mt-8">
+</div>
+
 </div>
 
 </div>
