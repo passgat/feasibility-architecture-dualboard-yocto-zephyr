@@ -243,7 +243,7 @@ Back to the roots
       <li>Smart thermostat demo</li>
       <li>Main board
         <ul class="font-normal list-disc pl-5">
-          <li>STM32MP257 SOM</li>
+          <li>EDIMM 2.0 EVK - STM32MP257 SOM</li>
           <li>Yocto - scarthgap</li>
           <li>Flutter - 3.32.2</li>
         </ul>
