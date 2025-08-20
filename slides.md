@@ -1822,13 +1822,15 @@ In LVGL Everything is an object
     basic data flow
   </a>
 <ul class="list-decimal">
+<ol>
 <li class="text-blue-400"> Driver initialization - Zephyr </li>
 <li class="text-blue-400"> Run lvgl_init() - Zephyr </li>
 <li class="text-blue-400"> Create display and input devices - Zephyr </li>
 <li> Create GUI </li>
-<li> Read data from sensors </li>
-<li> Update widgets properties </li>
+<li class="text-red-600"> Read data from sensors </li>
+<li class="text-red-600"> Update widgets properties </li>
 <li> Refresh the screen </li>
+</ol>
 </ul>
 </li>
 
