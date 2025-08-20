@@ -1112,9 +1112,9 @@ Zephyr - Application types
 <div>
 
 <ul class="font-bold">
-  <li> Zephyr repository application </li>
+  <li> Repository application </li>
   <li class="text-red-600">
-    Zephyr workspace application
+    Workspace application
     <ul class="font-normal text-black">
       <li> Avoid unnecessary changes to Zephyr repo</li>
       <li>
@@ -1126,7 +1126,7 @@ Zephyr - Application types
       </li>
     </ul>
   </li>
-  <li> Zephyr freestanding application </li>
+  <li> Freestanding application </li>
 </ul>
 
 ```
