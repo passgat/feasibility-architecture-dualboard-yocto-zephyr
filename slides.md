@@ -61,7 +61,7 @@ About Us
             </ul>
          </li>
          <li>
-            Open Source at Our Core
+            Open Source at our Core
             <ul>
                <li>Active upstream contributions</li>
                <li>Solutions built for security and long-term maintainability</li>
@@ -191,7 +191,7 @@ Together with my colleague Michael Trimarchi, I am the
 <span style="color: red; font-weight: bold;">U-Boot</span>,
 and in the <span style="color: red; font-weight: bold;">Linux</span> kernel, the
 <span style="color: red; font-weight: bold;">maintainer</span> of the BxCAN
-and SLCAN drivers which are part of the CAN subsystem.
+and SLCAN drivers, which are part of the CAN subsystem.
 
 I live in a small town near Mantua, in northern Italy.
 
@@ -259,7 +259,7 @@ Back to the roots
       <li>FOSS contributions</li>
       <li>Integration and adaption to new hardware</li>
       <li>
-        ST authorized partner
+        ST authorised partner
         <a
           href="https://www.st.com/content/st_com/en/partner/partner-program/partnerpage/amarula-solutions.html"
           class="text-blue-500 underline"
@@ -307,7 +307,7 @@ The target was to showcase not only the
 <span style="color: red; font-weight: bold;">technologies</span> we are familiar
 with, but also the <span style="color: red; font-weight: bold;">principles</span>
 behind our engineering choices — like using software packages as close as possible
-to mainline versions, in order to meet the
+to mainline versions, to meet the
 <span style="color: red; font-weight: bold;">security</span> and
 <span style="color: red; font-weight: bold;">maintainance</span> requirements of
 the Cyber Resilience Act (CRA).
@@ -377,10 +377,10 @@ Hardware setup - Main board
 
 <!--
 The STM32MP257 module has dual Arm® Cortex®-A35 cores running up to 1.5 GHz, with
-2 GB of RAM. It includes several peripheral like CAN interfaces, multimedia
+2 GB of RAM. It includes several peripherals like CAN interfaces, multimedia
 processing, and a 3D graphics processor.
 
-This makes it a good fit for edge computing tasks like machine vision.
+This makes it a good fit for edge computing tasks, such as machine vision.
 
 <span style="color: red; font-weight: bold;">Finally</span>, since the Engicam
 evaluation board has both a display and a CAN bus connector,
@@ -441,7 +441,7 @@ sensors</span> for environmental data like temperature, pressure, and
 humidity.
 
 <span style="color: red; font-weight: bold;">What's more</span>, while the
-STM32F429 microprocessor has two CAN peripherals, the board's design
+STM32F429 microprocessor has two CAN peripherals, and the board's design
 <span style="color: red; font-weight: bold;">doesn't provide access to the CAN bus</span>
 for external communications.
 
@@ -587,7 +587,7 @@ BBLAYERS ?= " \
 For our project, we started with the fundamental layers: openembedded-core and meta-openembedded, which provide the essential building blocks for our image—everything from standard utilities to package management.
 Since we’re working with an ST module, we included the relevant ST layers, which provide the kernel, board support, and base operating system components.
 On top of that, we added meta-engicam-st, which includes the device tree files and board-specific configurations for our hardware.
-To support our Flutter-based UI, we integrated the Flutter framework and its dependencies through via meta-clang and meta-flutter.
+To support our Flutter-based UI, we integrated the Flutter framework and its dependencies via meta-clang and meta-flutter.
 And finally, we have our custom layer, where we maintain the application recipe and any project-specific customisations.
 -->
 
@@ -708,11 +708,11 @@ Yocto - KAS
 
 <div class="flex flex-row items-center justify-center space-x-24 text-2xl">
    <div class="font-semibold max-w-xs leading-relaxed">
-      This tool provides an easy mechanism to setup bitbake based projects.
+      This tool provides an easy mechanism to set up bitbake-based projects.
    </div>
     <ul class="list-disc list-inside space-y-3 max-w-xs">
        <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Clone and checkout bitbake layers</li>
-       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Create default bitbake settings (machine, arch, …)</li>
+       <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Create default bitbake settings (machine, arch)</li>
        <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Launch minimal build environment, reducing risk of host contamination</li>
        <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">Initiate bitbake build process</li>
     </ul>
@@ -826,7 +826,7 @@ Yocto - KAS Usage
 
 <div class="flex flex-col item-center justify-left text-2xl">
    <div class="font-semibold leading-relaxed">
-      Run KAS on host
+      Run KAS on the host
    </div>
    <div>
 ```bash
@@ -907,7 +907,7 @@ Flutter - Power
             Easy to learn and use
          </li>
          <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
-            Hot Reload
+            Hot reload
          </li>
          <li class="font-semibold hover:text-indigo-600 transition-colors duration-300 cursor-pointer">
             Null safety and async/await support
@@ -990,7 +990,7 @@ Flutter - C++
 
 <div class="flex flex-row items-center justify-evenly text-2xl">
    <div class="font-semibold max-w-xs leading-relaxed">
-      Flutter apps can use the FFI library to call native C APIs, and to read, write, allocate, and deallocate native memory.
+      Flutter apps can use the FFI library to call native C APIs and to read, write, allocate, and deallocate native memory.
    </div>
    <div class="flex flex-col space-y-16">
       <div>
@@ -1286,7 +1286,7 @@ In the application directory, <span style="color: red; font-weight: bold;">we ha
 key files</span>:
 
 CMakeLists.txt <span style="color: red; font-weight: bold;">tells the build system where
-</span>to find the application sources, and links the application to the Zephyr’s build
+</span>to find the application sources, and link the application to Zephyr’s build
 system.
 
 App.overlay <span style="color: red; font-weight: bold;">applies custom changes</span> to
@@ -1517,7 +1517,7 @@ Zephyr - app.overlay
 <li> Align with hardware changes </li>
 <li> Populate the i2c3 bus
 <ul class="font-normal">
-<li> Temperature & himudity sensor @ 0x44 </li>
+<li> Temperature & humudity sensor @ 0x44 </li>
 <li> Pressure sensor @ 0x5c </li>
 </ul>
 </li>
@@ -1665,7 +1665,7 @@ Zephyr - app/*.c
 
 <ul class="font-bold space-y-3">
   <li> Clear API provided by Zephyr and its module </li>
-  <li> Lot of application examples
+  <li> A lot of application examples
     <ul class="font-normal text-black">
       <li> samples/drivers/display </li>
       <li> samples/subsys/display/lvgl </li>
@@ -1705,7 +1705,7 @@ $ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64
 
 <!--
 <span style="color: red; font-weight: bold;">Regarding the application layer,
-Zephyr and its modules provide a simple and clear API, and a lot of example
+Zephyr and its modules provide a simple and clear API, and a lot of examples
 applications showing </span>how to use its components — from the CAN bus to
 LEDs, sensors, and the graphical interface.
 
@@ -1719,7 +1719,7 @@ and then use that code as a starting point for our development.
 
 ::title::
 
-Zephyr - FOSS contribute
+Zephyr - FOSS contribution
 
 ::body::
 
@@ -1734,7 +1734,7 @@ Zephyr - FOSS contribute
 	  <li> CAN1 primary controller </li>
 	  <li> CAN2 secondary controller </li>
           <li> Enable CAN1 RCC clock to use CAN2</li>
-	  <li> Need to fix a regression by code re-factoring</li>
+	  <li> Need to fix a regression by code refactoring </li>
 	  <li>
 	    bxCAN internals? Don’t miss Amarula's
             <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems" class="text-blue-500 underline" target="_blank">
@@ -1786,11 +1786,11 @@ ed48de2583af boards: st: stm32f429i_disc1: doc: re-work flashing section
 </span>an opportunity for us to contribute to the Zephyr project.
 
 The STM32F429 microcontroller features two bxCAN peripherals: CAN 1 (in primary
-mode) CAN2 in secondary mode. Even if you use only CAN2, CAN1 clock must still
+mode) and CAN2 in secondary mode. Even if you use only CAN2, the CAN1 clock must still
 be enabled because both share internal resources like SRAM and the receive
 filters.
 
-In our case we used CAN2, but due to a Zephyr regression, only the CAN2 clock
+In our case, we used CAN2, but due to a Zephyr regression, only the CAN2 clock
 was enabled. This caused CAN2 not to work properly.
 
 We found and fixed the issue, and following Amarula’s approach, we upstreamed
@@ -1798,14 +1798,13 @@ the patch to share it with the community.
 
 While waiting for the patch to be accepted, we applied a temporary fix in the
 stm32f429i_dis1.overlay file, <span style="color: red; font-weight: bold;">without
-changing the Zephyr's code.</span>
+changing Zephyr's code.</span>
 
-Once the patch was accepted upstream, we removed the overlay fix and updated the
-the Zephyr's version in west.yaml to the first release including our fix.
+Once the patch was accepted upstream, we removed the overlay fix and updated Zephyr's version in west.yaml to the first release including our fix.
 
 <span style="color: red; font-weight: bold;">We can also mention that</span> we
 upstreamed patches to improve and fix the board’s documentation. While these were
-not as critical as the first patch which affected the device’s functionality,
+not as critical as the first patch, which affected the device’s functionality,
 they still provide useful support for anyone working with this board.
 -->
 
@@ -1850,7 +1849,7 @@ graphical elements and a low memory footprint</span>.
 widgets—buttons, charts, sliders, images— and <span style="color: red; font-weight: bold;">
 supports input devices</span> like touchscreens, mice, and keyboards.
 It works with <span style="color: red; font-weight: bold;">any microcontroller and display,
-</span>is written in C, and, what really matters for us Zephyr comes packaged with LVGL.
+</span>is written in C, and, what really matters for us, Zephyr comes packaged with LVGL.
 -->
 
 ---
@@ -2015,7 +2014,7 @@ CONFIG_ILI9341=y
 we need to address two key points.</span>
 
 First, we have to enable the LCD driver and link it to our graphics library.
-Then, once the LCD device is set up, we can call LVGL functions and the output
+Then, once the LCD device is set up, we can call LVGL functions, and the output
 will appear on the screen, assuming everything is configured properly.
 
 <span style="color: red; font-weight: bold;">This means first enabling the
@@ -2118,7 +2117,7 @@ touchscreen</span>.
 <span style="color: red; font-weight: bold;">What is nice is</span> that the
 "zephyr,display" property and the settings in the lvgl_pointer node are used
 by the lvgl_init() function, which runs just before the main application
-starts, to turn on display and touchscreen.
+starts, to turn on the display and touchscreen.
 
 <span style="color: red; font-weight: bold;">So, when the application
 starts</span>, thanks to the device tree setup, all the hardware is
@@ -2190,7 +2189,7 @@ LVGL - Application
 
 <ul class="font-bold space-y-4">
 <li>
-In LVGL Everything is an object
+In LVGL, everything is an object
 <ul class="font-normal">
 <li> Create the object </li>
 <li> Setup its properties </li>
@@ -2535,11 +2534,11 @@ and refinement.
 </div>
 
 <div class="mt-6">
-Thanks to Amarula and ELCE organization for the assistance and support.
+Thanks to Amarula and the ELCE organisation for the assistance and support.
 </div>
 
 <div class="mt-18">
-We are sorry If we forgot someone :).
+We are sorry if we forgot someone 😃.
 </div>
 
 <!--
