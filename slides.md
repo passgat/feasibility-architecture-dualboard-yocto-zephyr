@@ -175,9 +175,26 @@ About Us
 </div>
 
 <!--
-I’m Dario Binacchi and at Amarula, I mainly take care of the operating system side of the boards we work on.
-I’m an open source contributor for projects like Buildroot, U-boot, Linux and Zephyr. Together with my colleague Michael Trimarchi, I am a custodian of the NAND subsystem in U-Boot, and in the Linux kernel, I maintain the BxCAN and SLCAN drivers for the CAN subsystem.
-I live in a small town in the Po valley, north of Italy.
+
+Hi, I’m Dario Binacchi.
+
+At <span style="color: red; font-weight: bold;">Amarula</span>, I mainly work on
+<span style="color: red; font-weight: bold;">creating</span> and
+<span style="color: red; font-weight: bold;">adapting</span> the
+<span style="color: red; font-weight: bold;">BSPs</span> for the boards we support.
+
+I’m an open source contributor to projects like Buildroot, U-boot, Linux and
+Zephyr.
+
+Together with my colleague Michael Trimarchi, I am the
+<span style="color: red; font-weight: bold;">custodian</span> of the NAND subsystem in 
+<span style="color: red; font-weight: bold;">U-Boot</span>,
+and in the <span style="color: red; font-weight: bold;">Linux</span> kernel, the
+<span style="color: red; font-weight: bold;">maintainer</span> of the BxCAN
+and SLCAN drivers which are part of the CAN subsystem.
+
+I live in a small town near Mantua, in northern Italy.
+
 -->
 
 ---
@@ -207,7 +224,20 @@ Agenda
 </div>
 
 <!--
-In this presentation will detail the journey of our idea, from its initial concept to its development, including the challenges encountered. We will also provide an overview and comparison of the core components: the hardware setup (boards and sensors), the operating systems (Linux Yocto vs. Zephyr), and the UI frameworks (Flutter vs. LVGL).
+This presentation will describe our experience  — from the
+<span style="color: red; font-weight: bold;">first idea</span> to the
+<span style="color: red; font-weight: bold;">final implementation</span> — and
+<span style="color: red; font-weight: bold;">share the main challenges</span> we
+met along the way.
+
+<span style="color: red; font-weight: bold;">We'll begin with</span> the hardware setup,
+<span style="color: red; font-weight: bold;">consisting</span> of a main and sensor
+board, <span style="color: red; font-weight: bold;">then we will cover </span>the
+Yocto build system and Flutter UI framework on the main board and Zephyr with the
+LVGL library on the sensor one.
+
+Finally, we will show a short video
+<span style="color: red; font-weight: bold;">of how</span> the demo works</span>.
 -->
 
 ---
@@ -269,6 +299,44 @@ Back to the roots
 </div>
 
 <!--
+Before diving into what I just outlined, let me say a few words about the origin
+of this talk. It was November 2024, and at Amarula, we had to decide what to
+present at Embedded World in March 2025.
+
+The target was to showcase not only the
+<span style="color: red; font-weight: bold;">technologies</span> we are familiar
+with, but also the <span style="color: red; font-weight: bold;">principles</span>
+behind our engineering choices — like using software packages as close as possible
+to mainline versions, in order to meet the
+<span style="color: red; font-weight: bold;">security</span> and
+<span style="color: red; font-weight: bold;">maintainance</span> requirements of
+the Cyber Resilience Act (CRA).
+
+<span style="color: red; font-weight: bold;">In addition</span>, since we were at the
+<span style="color: red; font-weight: bold;">Engicam booth</span> and are
+<span style="color: red; font-weight: bold;">ST partners</span>, we wanted
+to take the chance to work on hardware that combined both aspects.
+
+<span style="color: red; font-weight: bold;">Finally</span>, we wanted to design an
+infrastructure <span style="color: red; font-weight: bold;">reusable</span> across
+multiple domains — from industrial and medical to automotive —
+<span style="color: red; font-weight: bold;">where a main board</span> communicates
+with IoT systems over a CAN bus.
+
+<span style="color: red; font-weight: bold;">Starting from these ideas</span>, we
+decided to build a <span style="color: red; font-weight: bold;">thermostat</span>
+where the main board <span style="color: red; font-weight: bold;">collects and
+displays ambient data</span> from remote sensors connected to a sensor board.
+
+<span style="color: red; font-weight: bold;">For main board</span>, we chose the
+Engicam EDIM 2.0 starter kit, based on the STM32MP257 module.
+<span style="color: red; font-weight: bold;">This allowed us to</span>
+run Linux and use Flutter</span> for the graphical interface.
+
+<span style="color: red; font-weight: bold;">For the sensor board</span>, we
+selected the STM32F429-DISC1 board.
+<span style="color: red; font-weight: bold;">Despite its more limited resources </span>,
+it was a good fit for running Zephyr and using the LVGL library to develop the UI.
 -->
 
 ---
@@ -308,6 +376,16 @@ Hardware setup - Main board
 </div>
 
 <!--
+The STM32MP257 module has dual Arm® Cortex®-A35 cores running up to 1.5 GHz, with
+2 GB of RAM. It includes several peripheral like CAN interfaces, multimedia
+processing, and a 3D graphics processor.
+
+This makes it a good fit for edge computing tasks like machine vision.
+
+<span style="color: red; font-weight: bold;">Finally</span>, since the Engicam
+evaluation board has both a display and a CAN bus connector,
+<span style="color: red; font-weight: bold;">no hardware changes were required
+on the main board</span>.
 -->
 
 ---
@@ -357,6 +435,18 @@ Hardware setup - Sensor board
 </div>
 
 <!--
+This was not the case for the sensor board. The Discovery board
+<span style="color: red; font-weight: bold;">does not include built-in
+sensors</span> for environmental data like temperature, pressure, and
+humidity.
+
+<span style="color: red; font-weight: bold;">What's more</span>, while the
+STM32F429 microprocessor has two CAN peripherals, the board's design
+<span style="color: red; font-weight: bold;">doesn't provide access to the CAN bus</span>
+for external communications.
+
+So, we needed to add the SHT4x sensor for temperature and humidity, the LPS22HB
+sensor for pressure, and a CAN transceiver to connect to the communication bus.
 -->
 
 ---
@@ -400,6 +490,29 @@ Hardware setup - Sensor board
 </div>
 
 <!--
+Then, our hardware colleague Alberto Bianchi created an
+<span style="color: red; font-weight: bold;">extension board</span> for the
+STM32F429-DISCO. He connected the sensors to the I2C bus, enabled the CAN
+peripheral <span style="color: red; font-weight: bold;">by removing</span> some
+components on the disco board to avoid hardware conflicts, and added the CAN
+transceiver with a connector to enable communication with the main board.
+
+<span style="color: red; font-weight: bold;">As you can see</span> in this part
+of the STM32F429I-DISCO schematic, the CAN pins are used by the USB OTG. So,
+we had to cut some lines, which disabled the USB OTG function we didn’t need, to
+enable CAN bus communication.
+
+<span style="color: red; font-weight: bold;">In the image on the left</span>, you
+see the <span style="color: red; font-weight: bold;">top side</span> of the board
+<span style="color: red; font-weight: bold;">showing</span> the disco board, the
+sensors, and the CAN bus connector.
+
+<span style="color: red; font-weight: bold;">On the right</span>, you see the
+<span style="color: red; font-weight: bold;">bottom side</span> of the board:
+<span style="color: red; font-weight: bold;">on the left</span> are the connections
+between the CAN transceiver and the microcontroller, and
+<span style="color: red; font-weight: bold;">on the right</span>, are the connections
+from the sensors to the I2C bus.
 -->
 
 ---
@@ -1060,6 +1173,29 @@ Zephyr
 </div>
 
 <!--
+Let’s continue with the sensor board.
+<span style="color: red; font-weight: bold;">After the hardware, we now</span> move
+to the software side, <span style="color: red; font-weight: bold;">starting</span>
+with the Zephyr operating system.
+
+<span style="color: red; font-weight: bold;">It was clear from the beginning</span>
+that Linux would not be the right choice. Even if the board is supported by mainline
+Linux and has a Buildroot configuration,
+<span style="color: red; font-weight: bold;">we needed an OS with a smaller footprint
+to keep enough resources</span> for the graphical interface.
+
+Zephyr, on the other hand, already <span style="color: red; font-weight: bold;">supports
+the board</span> and our <span style="color: red; font-weight: bold;">first tests with
+the sample applications for display and touchscreen</span> confirmed the drivers were
+implemented and working properly.
+
+<span style="color: red; font-weight: bold;">In addition</span>,like Linux, Zephyr also
+has <span style="color: red; font-weight: bold;">Kconfig and Device Tree support</span>.
+<span style="color: red; font-weight: bold;">This allows us</span> to make the changes
+needed to <span style="color: red; font-weight: bold;">customize</span> the board for
+our application.
+
+So, for sure, Zephyr was the obvious choice.
 -->
 
 ---
@@ -1137,6 +1273,31 @@ Zephyr - Application
 </div>
 
 <!--
+At this point, <span style="color: red; font-weight: bold;">our first question was</span>:
+how do we properly design a Zephyr application?
+
+Zephyr uses CMake as its build system, which is application-centric.
+
+This means the application <span style="color: red; font-weight: bold;">controls how both
+</span>itself and the Zephyr kernel <span style="color: red; font-weight: bold;">are
+configured and built into the final binary</span>.
+
+In the application directory, <span style="color: red; font-weight: bold;">we have three
+key files</span>:
+
+CMakeLists.txt <span style="color: red; font-weight: bold;">tells the build system where
+</span>to find the application sources, and links the application to the Zephyr’s build
+system.
+
+App.overlay <span style="color: red; font-weight: bold;">applies custom changes</span> to
+the devicetree, <span style="color: red; font-weight: bold;">adapting</span> the Zephyr
+board definition to our needs. In our case, it turns the STM32F429I-DISCO into the sensor
+board.
+
+<span style="color: red; font-weight: bold;">Finally</span>, prj.conf
+<span style="color: red; font-weight: bold;">provides application-specific
+configuration options</span>. It’s a Kconfig fragment that is merged with Zephyr’s base
+configuration during the build.
 -->
 
 ---
@@ -1232,6 +1393,31 @@ zephyrproject/
 </div>
 
 <!--
+In Zephyr, <span style="color: red; font-weight: bold;">applications can be
+categorized into three types</span>, depending on where the source code is
+located:
+
+Repository applications are placed inside the main Zephyr repository.
+
+Workspace applications live outside the main Zephyr repository but inside a
+Zephyr workspace.
+
+Finally, Freestanding applications are entirely outside of a Zephyr workspace.
+
+We chose the workspace application approach to
+<span style="color: red; font-weight: bold;">avoid making changes inside the
+Zephyr repository</span>.
+This way, <span style="color: red; font-weight: bold;">we can always use the
+mainline version</span> of Zephyr without having to worry about conflicts
+from our application code.
+
+<span style="color: red; font-weight: bold;">Then, following the
+example-application on GitHub</span> — a reference for how to structure
+Zephyr-based projects — <span style="color: red; font-weight: bold;">we set up
+our workspace and cloned the needed modules and application</span>.
+
+The manifest <span style="color: red; font-weight: bold;">tells west</span> to
+fetch Zephyr version 4.0.0 along with required modules like the LVGL library.
 -->
 
 ---
@@ -1299,7 +1485,20 @@ target_sources(app
 </div>
 
 <!--
-ts {5|9-20|all}
+<span style="color: red; font-weight: bold;">Now, I'll go over the files used
+to configure and build the application</span>.
+
+Starting with the CMakeLists.txt, the find_package() command loads the Zephyr
+build system which creates a CMake target with the name app.
+
+We add our application source files to this target using target_sources().
+
+<span style="color: red; font-weight: bold;">Finally, to build</span> the
+application and generate the binary to flash, we run the west build command.
+
+<span style="color: red; font-weight: bold;">Note that</span> the environment
+variable ZEPHYR_BASE used in find_package(), is automatically set by west
+during the build.
 -->
 
 ---
@@ -1367,6 +1566,17 @@ zephyr_udc0: &usbotg_hs {
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">Moving on to the app.overlay file</span>,
+it connects the SHT4x and LPS22HB sensors to the I2C bus at their specific addresses,
+and also enables the CAN peripheral.
+
+<span style="color: red; font-weight: bold;">Note that just as we removed</span> some
+components from the board to avoid hardware conflicts, we also had to disable the USB
+OTG in the device tree, because it shares pins with the CAN controller.
+
+<span style="color: red; font-weight: bold;">Finally</span>, as often happens in Linux
+device trees as well, the <span style="color: red; font-weight: bold;">CAN transceiver
+</span>isn't described there.
 -->
 
 ---
@@ -1426,6 +1636,20 @@ CONFIG_LV_...=y
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">With the prj.conf file, we enabled
+all the configurations our application needs</span> — like support for the CAN
+bus, LEDs, the graphical interface, and the I2C sensors.
+
+<span style="color: red; font-weight: bold;">You don't see</span> any settings
+specific to the sensors, display, or CAN controller here because Zephyr already
+provides <span style="color: red; font-weight: bold;">ready-to-use drivers</span>
+for all of them.
+
+<span style="color: red; font-weight: bold;">All we had to do was enable the
+right subsystems and describe the hardware in the device tree.</span>
+
+<span style="color: red; font-weight: bold;">We'll go into more detail</span> in
+the section about the LVGL library.
 -->
 
 ---
@@ -1480,6 +1704,15 @@ $ west flash --runner openocd --config ${HOME}/zephyr-sdk-0.17.0/sysroots/x86_64
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">Regarding the application layer,
+Zephyr and its modules provide a simple and clear API, and a lot of example
+applications showing </span>how to use its components — from the CAN bus to
+LEDs, sensors, and the graphical interface.
+
+<span style="color: red; font-weight: bold;">These simple examples were really
+handy for testing the hardware and developing our application</span>.
+With just a few commands, we could check that each peripheral was working properly
+and then use that code as a starting point for our development.
 -->
 
 ---
@@ -1549,6 +1782,31 @@ ed48de2583af boards: st: stm32f429i_disc1: doc: re-work flashing section
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">The application development was also
+</span>an opportunity for us to contribute to the Zephyr project.
+
+The STM32F429 microcontroller features two bxCAN peripherals: CAN 1 (in primary
+mode) CAN2 in secondary mode. Even if you use only CAN2, CAN1 clock must still
+be enabled because both share internal resources like SRAM and the receive
+filters.
+
+In our case we used CAN2, but due to a Zephyr regression, only the CAN2 clock
+was enabled. This caused CAN2 not to work properly.
+
+We found and fixed the issue, and following Amarula’s approach, we upstreamed
+the patch to share it with the community.
+
+While waiting for the patch to be accepted, we applied a temporary fix in the
+stm32f429i_dis1.overlay file, <span style="color: red; font-weight: bold;">without
+changing the Zephyr's code.</span>
+
+Once the patch was accepted upstream, we removed the overlay fix and updated the
+the Zephyr's version in west.yaml to the first release including our fix.
+
+<span style="color: red; font-weight: bold;">We can also mention that</span> we
+upstreamed patches to improve and fix the board’s documentation. While these were
+not as critical as the first patch which affected the device’s functionality,
+they still provide useful support for anyone working with this board.
 -->
 
 ---
@@ -1582,6 +1840,17 @@ LVGL
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">And here we are at the graphics section.</span>
+
+LVGL is a free and open-source graphics library providing everything you need
+to create an embedded GUI <span style="color: red; font-weight: bold;">with easy-to-use
+graphical elements and a low memory footprint</span>.
+
+<span style="color: red; font-weight: bold;">It comes with a wide range</span> of
+widgets—buttons, charts, sliders, images— and <span style="color: red; font-weight: bold;">
+supports input devices</span> like touchscreens, mice, and keyboards.
+It works with <span style="color: red; font-weight: bold;">any microcontroller and display,
+</span>is written in C, and, what really matters for us Zephyr comes packaged with LVGL.
 -->
 
 ---
@@ -1653,6 +1922,24 @@ int lvgl_init(void)
 </div>
 
 <!--
+In Zephyr, the LVGL source code <span style="color: red; font-weight: bold;">is
+split across two main locations</span>.
+
+It’s downloaded automatically with west update as part of the workspace
+modules, <span style="color: red; font-weight: bold;">which makes it easy</span>
+to keep updated and separate from the application code.
+You can check the version in use in the lvgl.h header file.
+
+Under the Zephyr modules folder, you’ll find the integration layer,
+<span style="color: red; font-weight: bold;">which contains Zephyr-specific
+configuration and glue code</span>.
+This layer <span style="color: red; font-weight: bold;">handles
+tasks</span> like setting Kconfig options, initializing the library at system
+startup with the lvgl_init() function, and selecting the display through
+the device tree using the DT_CHOSEN macro.
+
+All this setup makes it easy to use LVGL in your application without having
+to handle the integration yourself.
 -->
 
 ---
@@ -1724,6 +2011,33 @@ CONFIG_ILI9341=y
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">Before developing the interface,
+we need to address two key points.</span>
+
+First, we have to enable the LCD driver and link it to our graphics library.
+Then, once the LCD device is set up, we can call LVGL functions and the output
+will appear on the screen, assuming everything is configured properly.
+
+<span style="color: red; font-weight: bold;">This means first enabling the
+display subsystem and driver</span>. As mentioned
+earlier in the prj.conf description, we’re using an ILI9341 display from
+Ilitek, but there isn't any Kconfig option for it.
+<span style="color: red; font-weight: bold;">Why is that?</span>
+
+Well, if we check how the ILI9341 option is defined, we’ll see it’s enabled
+by default when CONFIG_DISPLAY is set and DT_HAS_ILITEK_ILI9341_ENABLED is
+true. In other words, having the right compatible in the device tree is
+enough for the option to be enabled automatically. Indeed, we can confirm
+it’s enabled by checking the .config file.
+
+<span style="color: red; font-weight: bold;">This is pretty cool</span> —
+especially if you compare it to the Linux kernel - where you have to enable
+both the device tree node and the related Kconfig option to get the driver
+working.
+
+<span style="color: red; font-weight: bold;">As a quick note, the same
+approach</span> is also used to probe the sensors and the CAN peripheral in
+our setup.
 -->
 
 ---
@@ -1794,6 +2108,28 @@ SMP
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">On the DTS side</span>, we don’t
+need to add anything in the application overlay
+<span style="color: red; font-weight: bold;">because everything is already
+properly set up</span> in the discovery board's device tree, for
+<span style="color: red; font-weight: bold;">both the display and the
+touchscreen</span>.
+
+<span style="color: red; font-weight: bold;">What is nice is</span> that the
+"zephyr,display" property and the settings in the lvgl_pointer node are used
+by the lvgl_init() function, which runs just before the main application
+starts, to turn on display and touchscreen.
+
+<span style="color: red; font-weight: bold;">So, when the application
+starts</span>, thanks to the device tree setup, all the hardware is
+<span style="color: red; font-weight: bold;">already up and running</span>,
+and we can start using the LVGL functions.
+
+<span style="color: red; font-weight: bold;">This also means</span> you don't have
+to change the application code when
+<span style="color: red; font-weight: bold;">switching hardware or displays</span>,
+since <span style="color: red; font-weight: bold;">all the configuration is covered
+by the device tree</span>.
 -->
 
 ---
@@ -1834,6 +2170,11 @@ CONFIG_LV_FONT_MONTSERRAT_32=y
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">Now, before jumping into the
+application code</span>, there’s just one more thing to do:
+enable LVGL, enable only the widgets we actually need, and
+<span style="color: red; font-weight: bold;">tweak a few
+Kconfig options</span> to fine-tune the memory footprint of the application.
 -->
 
 ---
@@ -1913,6 +2254,27 @@ void main(void) {
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">And now, we’re finally ready
+to write our application</span>.
+
+The core idea in LVGL is that everything is an object.
+<span style="color: red; font-weight: bold;">Your code is all about
+creating and configuring these objects</span>.
+For example, a label is just one type of object. You create it, set its
+properties <span style="color: red; font-weight: bold;">like text and color
+using a style</span>, and then place it on the screen.
+
+<span style="color: red; font-weight: bold;">About the application</span> —
+<span style="color: red; font-weight: bold;">without going too deep</span> —
+<span style="color: red; font-weight: bold;">we started from</span> the basic
+data flow described in the LVGL documentation, then we updated the widgets based on
+data from the sensors.
+
+<span style="color: red; font-weight: bold;">What’s great is that</span> steps 1, 2,
+and 3 are fully handled by Zephyr. <span style="color: red; font-weight: bold;">So,
+the developer only needs to</span> create the UI, update it according to the application
+logic, and keep calling lv_timer_handler() to run LVGL’s internal processes and
+refresh the screen.
 -->
 
 ---
@@ -1987,6 +2349,35 @@ LVGL - Memory footprint
 </ul>
 
 <!--
+This table compares five use cases, showing memory usage across FLASH, RAM,
+and SDRAM.
+
+The first use case, hello_world, represents the minimal Zephyr application.
+
+The second case <span style="color: red; font-weight: bold;">shows our
+application</span> built without the GUI,
+<span style="color: red; font-weight: bold;">using about twice the memory</span>
+of the hello_world case, but still far from the limits.
+
+In the last three use cases, <span style="color: red; font-weight: bold;">we add
+a graphical interface</span>,
+<span style="color: red; font-weight: bold;">starting from</span> a minimal
+example <span style="color: red; font-weight: bold;">and moving to</span> more
+complex ones.
+
+The third draws rectangles directly using the display driver.
+
+The fourth is a small LVGL application with a button and a label updating
+once per second.
+
+The last case is our fully functional application.
+
+<span style="color: red; font-weight: bold;">We can see that </span>in all
+three cases, <span style="color: red; font-weight: bold;">the SDRAM usage for
+the framebuffer is the same</span>, and in general, the
+<span style="color: red; font-weight: bold;">memory footprint stays small</span>,
+even in the most demanding case, showing that LVGL is a good choice for mid-range
+platforms like the STM32F429.
 -->
 
 ---
@@ -2069,6 +2460,22 @@ Heap at 0x20001838 contains 2047 units in 11 buckets
 </div>
 
 <!--
+<span style="color: red; font-weight: bold;">In addition to static memory
+analysis, Zephyr allows runtime heap monitoring.</span>
+
+By enabling the Kconfig options CONFIG_SHELL and CONFIG_LV_Z_SHELL, Zephyr
+provides the command <span style="color: red; font-weight: bold;">lvgl stats
+memory</span>, which shows <span style="color: red; font-weight: bold;">how the
+heap is organized</span> and <span style="color: red; font-weight: bold;">its
+usage, including</span> free memory, used memory, and the overhead needed to
+manage the heap.
+
+In addition, with CONFIG_LV_USE_MONKEY enabled, Zephyr provides monkey commands
+that simulate random input events.
+
+<span style="color: red; font-weight: bold;">All these commands are useful
+to</span> tune the memory setup, test the UI automatically, and identify
+runtime issues like memory leaks or unexpected behaviour.
 -->
 
 ---
@@ -2085,6 +2492,17 @@ Demo
 </video>
 
 <!--
+Finally, I will show a short video that gives a quick overview of the demo.
+
+<span style="color: red; font-weight: bold;">We start with</span> the sensor
+board.
+In this case, we <span style="color: red; font-weight: bold;">excite</span>
+the temperature sensor and <span style="color: red; font-weight: bold;">interact
+</span>with the graphical interface.
+
+<span style="color: red; font-weight: bold;">Then we move to</span> the main
+board, and <span style="color: red; font-weight: bold;">finally to the
+Flutter-based graphical interface</span> on the main board.
 -->
 
 ---
@@ -2318,4 +2736,10 @@ Q&A
 </div>
 
 <!--
+That’s it from our side.
+
+Thank you for your attention.
+
+We are happy <span style="color: red; font-weight: bold;">to answer any</span>
+questions or curiosities.
 -->
