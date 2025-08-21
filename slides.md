@@ -162,11 +162,11 @@ About Us
    </div>
    <div class="flex flex-col justify-between space-y-2">
       <div>
-         <img src="./assets/dario-binacchi-photo.jpeg" alt="Binacchi-avatar" class="w-54 h-54 rounded-xl shadow" />
+         <img src="./assets/dario-binacchi-photo-white-background.jpeg" alt="Binacchi-avatar" class="w-58 h-58 rounded-xl shadow" />
       </div>
       <iframe
          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22505.986572273636!2d10.752651133928621!3d45.16182115862277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781d40f82e52ed9%3A0xc1c7fd07590e7b85!2s46100%20Mantua%2C%20Province%20of%20Mantua!5e0!3m2!1sen!2sit!4v1752586166160!5m2!1sen!2sit"
-         class="w-54 h-54 rounded-xl shadow"
+         class="w-58 h-54 rounded-xl shadow"
          loading="lazy"
          referrerpolicy="no-referrer-when-downgrade"
          >
