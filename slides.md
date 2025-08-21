@@ -21,7 +21,10 @@ fonts:
 }
 </style>
 
-<!-- The content of the slide is handled by the layout -->
+<!--
+Hi everyone, and welcome to: “Feasibility and Architecture of a Dual-Board Embedded System: Yocto & Zephyr Integration.”
+Which sounds like a fancy title, but rest assured, this presentation focuses less on jargon and more on the practical journey: from the initial concept through hardware and software development, culminating in a fully operational system.
+-->
 
 ---
 
@@ -75,9 +78,10 @@ About Us
 </div>
 
 <!--
-We work at Amarula Solutions, a software consulting company with multiple offices across Europe. Our expertise spans mobile applications, cloud platforms, and embedded systems based on Android and Linux OS. We operate in a highly vertical organisation, covering everything from bootloaders and kernels all the way up to user interface applications.
-
-A core principle that guides our work is our open-source-oriented mindset. We actively contribute upstream, prioritising both security and long-term maintainability in the solutions we build.
+Let me start with a quick intro to our company.
+We work at Amarula Solutions, a software consulting firm with offices across Europe. We specialise in mobile applications, cloud platforms, and embedded systems, particularly those built on Linux and Android operating systems.
+Our unique strength lies in our vertical integration, as we handle everything from bootloaders and kernels to user-facing applications.
+At our core, we’re open source advocates. We contribute upstream regularly and build solutions that prioritise security and long-term maintainability.
 -->
 
 ---
@@ -121,7 +125,10 @@ About Us
 </div>
 
 <!--
-A quick introduction about myself: I’m Andrea Ricchi, from Carpi, Italy. At Amarula Solutions, I work as an embedded developer. My focus is on GUI applications using C++/Qt or Dart/Flutter, as well as user-space applications and services written in C/C++ and Rust. I actively contribute to open-source software projects, collaborating with the community on real-world challenges, including work on ConnMan, libraries, and UI components. I also have experience with Yocto and Buildroot, contributing recipes and packages to support embedded Linux development.
+A few words about me:
+I’m Andrea Ricchi, an embedded developer from Carpi, Italy.
+My expertise lies in developing user-space services in C and C++, as well as creating UI applications using Qt and Flutter.
+I actively contribute to open-source projects, including ConnMan, and I maintain some Qt components and Flutter packages. I also have hands-on experience with Yocto and Buildroot.
 -->
 
 ---
@@ -421,6 +428,11 @@ Yocto
 </div>
 
 <!--
+When building embedded systems on MCUs, we needed something flexible, scalable, and above all, reproducible.
+So, how do you build your own Linux distribution, perfectly tailored to your hardware?
+That’s where the Yocto Project comes in—our personal Linux chef. It doesn’t just serve a ready-made meal—it gives you the recipe, the ingredients, and the tools to recreate it, exactly the way you need it, every time.
+With a rich ecosystem of well-maintained open-source layers and recipes, Yocto strikes the right balance between customisation and maintainability.
+It's package-based, giving you full control over the image and toolchain, and it enables reproducible builds, which is critical when working on BSP generation for real-world products.
 -->
 
 ---
@@ -459,6 +471,11 @@ BBLAYERS ?= " \
 </div>
 
 <!--
+For our project, we started with the fundamental layers: openembedded-core and meta-openembedded, which provide the essential building blocks for our image—everything from standard utilities to package management.
+Since we’re working with an ST module, we included the relevant ST layers, which provide the kernel, board support, and base operating system components.
+On top of that, we added meta-engicam-st, which includes the device tree files and board-specific configurations for our hardware.
+To support our Flutter-based UI, we integrated the Flutter framework and its dependencies through via meta-clang and meta-flutter.
+And finally, we have our custom layer, where we maintain the application recipe and any project-specific customisations.
 -->
 
 ---
@@ -482,7 +499,8 @@ Yocto - Challanges
 </div>
 
 <!--
-In our project, we initially faced a version incompatibility between the official meta-engicam-st layer and the meta-flutter layer. The meta-engicam-st was based on an older Yocto release, which made it incompatible with the dependencies required by meta-flutter. To resolve this, we updated the meta-engicam-st layer to align with the latest Yocto LTS release, Scarthgap. This allowed us to successfully build both the board support package and the Flutter engine using the most recent and stable Yocto version, ensuring long-term maintainability and access to the latest features and security updates.
+The main challenge we faced was a version incompatibility between meta-flutter, which required scarthgap and meta-engicam-st that was on mickledor. Since we wanted to keep the Yocto on the LTS version, the only solution was to bump the latter to scarthgap.
+With a few tweaks, my colleague Michael successfully updated the engicam layer, allowing our project to run on the latest Yocto LTS version.
 -->
 
 ---
@@ -542,7 +560,6 @@ HOSTTOOLS += "xz truncate"
 # Flutter
 IMAGE_INSTALL:append = " \
     flutter-engine \
-    flutter-engine \
     flutter-wayland-client \
     ew-2025-flutter-demo-can-lib \
     ew-2025-flutter-demo \
@@ -558,7 +575,14 @@ TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
 </div>
 
 <!--
-To ensure a smooth and consistent build process, we customised our Yocto local.conf. We optimised build performance with parallelism settings (BB_NUMBER_THREADS and PARALLEL_MAKE), and enabled STMicroelectronics-specific licensing by accepting the EULA required for STM32MP25-based platforms. For localisation, we specified UTF-8 locales and language support. We chose the Debian package format (package_deb) for improved integration with Flutter and system updates, and enabled reproducible builds by controlling root file system timestamps. The configuration also supports extensible SDK generation and sets up the PR server to prevent version rollback issues in packaged recipes. Finally, we extended the image with key components for our Flutter-based UI, including the Flutter engine, Wayland client, and our custom application demos, ensuring that everything needed for development and deployment is included out of the box.
+To ensure a smooth and consistent build process, we customised our Yocto local.conf file.
+We optimised build performance using parallelism settings—BB_NUMBER_THREADS and PARALLEL_MAKE—to speed up task execution.
+Since we’re targeting STM32MP25-based platforms, we accepted the STMicroelectronics EULA, which is required to enable access to ST-specific layers and binaries.
+For localisation, we enabled UTF-8 locales and specified language support.
+We selected the Debian package format (package_deb) because we are comfortable with it on embedded platforms.
+To support reproducible builds, we configured deterministic root filesystem timestamps, which ensure that builds are identical every time, regardless of when they're run.
+The configuration also enables extensible SDK generation, which simplifies application development and sets up the PR server to avoid version rollback issues when packaging recipes.
+Finally, we extended the image with all the key components for our Flutter-based UI—including the Flutter engine, Wayland client, connman manager, and our custom demo applications—ensuring that the development environment is ready out of the box.
 -->
 
 ---
@@ -582,13 +606,14 @@ Yocto - KAS
 </div>
 
 <!--
-As you have seen until now, managing Yocto can be tricky. Layers, configs, dependencies…
-
-KAS make it too easy, almost boring…
-
-KAS is a tool that simplifies working with the Yocto Project by managing configurations and build environments through a single YAML file. Instead of manually setting up multiple layers, repositories, and local configurations, KAS lets you define everything in a structured, version-controlled format, making your builds reproducible and team-friendly. With just one command, kas build, you can go from a clean environment to a fully built Linux image. It's especially useful in collaborative or CI/CD setups, where consistency and ease of setup are crucial. Think of it as a lightweight project manager that keeps your Yocto-based workflows clean, reliable, and repeatable.
-
-With the power of Yocto and the simplicity of KAS, our result is this YAML file that contains all the building blocks that we analysed earlier.
+As you’ve seen so far, managing Yocto can get complex—layers, configurations, dependencies… it adds up quickly.
+That’s where KAS comes in—and honestly, it makes things almost boring in the best way.
+KAS is a tool that streamlines Yocto development by letting you manage everything—layers, repositories, configuration files—through a single YAML file.
+Instead of manually handling each layer and tweaking local setup files, KAS lets you define everything in a structured, version-controlled format.
+With just one command—kas build—you can go from a clean machine to a fully built Linux image.
+It’s especially useful in collaborative environments or CI/CD pipelines, where reproducibility and fast setup are essential.
+Think of KAS as a lightweight project manager for Yocto—it keeps your workflows clean, reliable, and repeatable.
+And by combining the power of Yocto with the simplicity of KAS, we ended up with a single YAML file that pulls together all the building blocks we explored earlier.
 -->
 
 ---
@@ -664,6 +689,11 @@ local_conf_header:
 </div>
 
 <!--
+Here’s the KAS YAML file that brings everything together.
+You can see how it defines all the key components we talked about—layers, repositories, and our custom local.conf settings.
+Everything is version-controlled, structured, and ready to build with a single command.
+This setup gives us a clean, reproducible environment that’s easy to share across the team or integrate into CI/CD.
+It’s a simple file, but it’s doing a lot of heavy lifting behind the scenes.
 -->
 
 ---
@@ -704,6 +734,7 @@ Yocto - KAS Usage
 </div>
 
 <!--
+That said, using KAS is incredibly simple. With just two commands, you can clone and build the entire project. One key feature is the Docker container integration, which lets you run all KAS commands in a clean, isolated environment, keeping your host system untouched.
 -->
 
 ---
@@ -742,10 +773,7 @@ Flutter
 </div>
 
 <!--
-We just seen how LVGL was really suited for our needs and the potential that it offers on MCUs. But what about MPUs?
-
-For those who don’t know Flutter is a UI framework developed by Google and written in the Dart language. It’s extremely popular in the mobile app world.
-
+Once our robust Linux system was in place, the next critical step was selecting a UI framework that could match its performance and provide a modern user experience. That's where Flutter came in.. For those who don’t know, Flutter is a UI framework developed by Google and written in the Dart language. It’s extremely popular in the mobile app world. 
 Now, you might be thinking, 'Flutter? That's for mobile apps.' I’ve heard people say it’s not truly supported on embedded Linux. Today, we're going to bust that myth. Not only is it supported, but it's already shipping in real products from major brands like Toyota.
 -->
 
@@ -784,6 +812,9 @@ Flutter - Power
 </div>
 
 <!--
+It starts with a revolutionary developer experience. Imagine designing, building, and perfecting your entire application on your desktop. Getting instant feedback with features like Hot Reload. No flashing. No waiting. We developed our entire UI this way.
+This dramatically increased productivity and allowed for rapid iteration, and it’s just the beginning.
+As a modern framework, Flutter brings serious power. It’s easy to learn, with modern language features, such as null safety and async support to make your application safe and robust. But the magic is that it's natively compiled. This means no compromises on performance. What you build on the desktop runs with incredible speed on the board.
 -->
 
 ---
@@ -833,6 +864,7 @@ Flutter - Ecosystem
 </div>
 
 <!--
+And one more thing… You don't have to build it all from scratch. Flutter is fully open source, with a massive, thriving community. Think of it like a treasure chest of pre-built components on pub.dev. For our project, we simply pulled in packages for page indicators, flexible colour schemes, and state management. On the screen, you can see some more examples, like GetX, which is an entire framework within a single package, chart widgets, fonts, animations and my personally maintained virtual keyboard: FluteKeyboard. Without reinventing the wheel, we had great UI components or more complex frameworks.
 -->
 
 ---
@@ -870,6 +902,7 @@ double _temperature = getTemperature();
 </div>
 
 <!--
+Of course, an embedded device needs to talk to hardware. For our CAN communication, we needed to touch the low-level system. With Flutter standard components, this wasn't achievable. But this is where Flutter's elegance truly shines. Using Dart's Foreign Function Interface, or FFI, we created a seamless bridge to our native C++ library. This gave us the best of both worlds: a beautiful, modern UI in Flutter, and powerful, performant hardware control in C++. Cleanly separated, perfectly integrated.
 -->
 
 ---
@@ -979,6 +1012,13 @@ SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 </v-switch>
 
 <!--
+So we have a modern framework and a huge ecosystem. But now comes the question that everyone in the room is thinking: 'How hard is it to actually integrate this into my Yocto build?'
+We all know that integrating new, complex software can be a battle of recipes and dependencies. But with Flutter, it's not a battle. It's a 'click'.
+With the meta-flutter layer, you don't have to become an expert on the Flutter engine's build system. You simply add this one layer to your project. It’s designed by the community for seamless integration and is widely adopted and supported by major brands.
+And the best part is the choice. Meta-flutter lets you pick your backend embedder like choosing the right tool for the job. The embedder is that piece of software that runs your application bundle.
+Need a lightweight, X11-less solution for a Raspberry Pi? There's flutter-pi. Building a modern automotive infotainment system? Use the ivi-homescreen from Toyota or the Wayland client from Sony. We used the flutter-wayland-client, and the integration was flawless.
+It turns the complexity of building a UI engine into a single, elegant line in your recipe. It just works.
+Then, to create your application recipe, you can follow the one already present in the meta-flutter layer and customise it based on your needs. The key is the `inherit flutter-app` line, which handles the cross-compilation and bundle generation.
 -->
 
 ---
