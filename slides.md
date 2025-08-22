@@ -1068,7 +1068,7 @@ An embedder is the platform-specific code that integrates the Flutter engine wit
          <div class="flex flex-col items-center space-y-6">
           <div>Flutter App Recipe</div>
           <div class="max-w-2xl leading-relaxed  text-lg">
-```{14}
+```
 SRCREV = "${AUTOREV}"
 SRC_URI = " \
     git://github.com/amarula/ew_2025_flutter_demo.git;branch=main;protocol=https;destsuffix=git \
