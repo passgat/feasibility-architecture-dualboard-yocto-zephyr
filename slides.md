@@ -98,11 +98,8 @@ About Us
          Andrea Ricchi
       </div>
       <a href="mailto:andrea.ricchi@amarulasolutions.com" class="text-xl text-blue-500 underline">andrea.ricchi@amarulasolutions.com</a>
-      <a href="https://github.com/AndreaRicchi" class="text-xl text-blue-500 underline">
-      https://github.com/AndreaRicchi
-      </a>
-      <hr class="my-4">
-      </hr>
+      <a href="https://andrearicchi.github.io/" class="text-xl text-blue-500 underline">https://andrearicchi.github.io/</a>
+      <hr class="my-4"></hr>
       <ul class="text-l">
          <li>C</li>
          <li>C++ & Qt</li>
